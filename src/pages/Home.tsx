@@ -100,27 +100,10 @@ export const Home: React.FC = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/20 via-white to-white">
-        {/* Ambient background glows */}
-        <div
-          className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-orange-200/20 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-orange-100/30 blur-3xl"
-          aria-hidden="true"
-        />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
-            backgroundSize: '48px 48px',
-          }}
-          aria-hidden="true"
-        />
-
+      <section
+        className="relative w-full overflow-hidden bg-cover bg-top bg-no-repeat"
+        style={{ backgroundImage: `url('/images/home_hero_bg.png')` }}
+      >
         {/* Main Content Container */}
         <div className="relative max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 pt-28 sm:pt-40 pb-20 lg:pb-28 w-full">
           
@@ -299,6 +282,7 @@ export const Home: React.FC = () => {
                   <div
                     key={item.title}
                     onClick={() => setActiveImpactIndex(idx)}
+                    onMouseEnter={() => setActiveImpactIndex(idx)}
                     className={`relative w-full cursor-pointer transition-all duration-300 border-t border-impact-grid ${
                       isActive ? 'bg-impact-ai-bg z-20 overflow-visible' : 'hover:bg-slate-50/60'
                     }`}
@@ -311,17 +295,17 @@ export const Home: React.FC = () => {
                           <h3 className="font-bricolage text-2xl sm:text-3xl font-medium text-dark tracking-tight leading-snug mb-2.5">
                             {item.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-muted font-normal leading-relaxed max-w-xl">
+                          <p className="text-xs sm:text-sm lg:text-[15px] text-muted font-normal leading-relaxed max-w-lg lg:max-w-xl">
                             {item.description}
                           </p>
                         </div>
 
                         {/* Floating Image on the Right protruding above and below the background strip */}
-                        <div className="hidden md:block absolute right-6 sm:right-10 lg:right-16 top-1/2 -translate-y-1/2 z-30 shrink-0">
+                        <div className="hidden md:block absolute right-6 sm:right-10 lg:right-16 top-1/2 -translate-y-1/2 z-30 shrink-0 pointer-events-none">
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-[260px] sm:w-[300px] lg:w-[360px] h-[260px] sm:h-[300px] lg:h-[360px] object-cover rounded-[24px] lg:rounded-[28px] shadow-xl border border-impact-accent/10"
+                            className="w-[260px] sm:w-[300px] lg:w-[360px] h-[260px] sm:h-[300px] lg:h-[360px] object-cover rounded-[24px] lg:rounded-[28px] shadow-2xl transition-all duration-300"
                           />
                         </div>
 
@@ -336,8 +320,8 @@ export const Home: React.FC = () => {
                       </div>
                     ) : (
                       /* Inactive Collapsed Row */
-                      <div className="py-6 sm:py-8 px-6 sm:px-8 flex items-center justify-between">
-                        <h3 className="font-bricolage text-2xl sm:text-3xl lg:text-[32px] font-normal text-dark tracking-tight">
+                      <div className="py-6 sm:py-8 px-6 sm:px-10 flex items-center justify-between">
+                        <h3 className="font-bricolage text-2xl sm:text-3xl lg:text-[32px] font-medium text-dark tracking-tight">
                           {item.title}
                         </h3>
                       </div>

@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   const meetRiseLinks = [
     { label: 'About Us', href: '/about-us' },
     { label: 'Our Mission, Vision & Values', href: '#' },
-    { label: 'FAQs', href: '#' },
+    { label: 'FAQs', href: '/faq' },
     { label: 'The Rise Networks Framework for Global AI Leadership', href: '#' },
     { label: 'Strategic Vision & Futuristic Outlook', href: '#' },
   ]
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
   ]
 
   const getInTouchLinks = [
-    { label: 'Partner With Us', href: '#' },
+    { label: 'Partner With Us', href: '/partners' },
     { label: 'Become a Mentor', href: '#' },
     { label: 'Volunteer', href: '#' },
     { label: 'Careers', href: '#' },

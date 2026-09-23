@@ -72,3 +72,16 @@
     flex-direction: column;
   }
 }
+
+@keyframes progressRing {
+  0% {
+    stroke-dashoffset: 56.55;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-progress-ring {
+  animation: progressRing 5s linear forwards;
+}
