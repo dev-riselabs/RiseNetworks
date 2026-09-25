@@ -311,8 +311,8 @@ export const Partners: React.FC = () => {
                     onMouseEnter={() => handleSelectPartner(idx)}
                     className={`transition-all duration-300 rounded-2xl sm:rounded-[22px] cursor-pointer select-none ${
                       isActive
-                        ? 'bg-[#29ABE2] text-white p-6 sm:p-7 shadow-sm'
-                        : 'bg-[#F9F9FB] hover:bg-[#F2F2F6] text-dark p-5 sm:p-6'
+                        ? 'bg-partner-blue text-white p-6 sm:p-7 shadow-sm'
+                        : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-5 sm:p-6'
                     }`}
                   >
                     {isActive ? (

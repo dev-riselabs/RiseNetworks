@@ -4,26 +4,26 @@ import { Link } from 'react-router-dom'
 export const Footer: React.FC = () => {
   const meetRiseLinks = [
     { label: 'About Us', href: '/about-us' },
-    { label: 'Our Mission, Vision & Values', href: '#' },
+    { label: 'Why Rise Networks', href: '/why-rise-networks' },
     { label: 'FAQs', href: '/faq' },
     { label: 'The Rise Networks Framework for Global AI Leadership', href: '#' },
     { label: 'Strategic Vision & Futuristic Outlook', href: '#' },
   ]
 
   const whatWeDoLinks = [
-    { label: 'Operational Focus Areas', href: '#' },
-    { label: 'Our Program Pillars', href: '#' },
-    { label: 'Events [Trainings, Workshops, Webinars]', href: '#' },
-    { label: 'Africa Next AI Fellowship', href: '#' },
-    { label: 'Makemation AI Tech Festivals', href: '#' },
+    { label: 'Operational Focus Areas', href: '/programs' },
+    { label: 'Our Program Pillars', href: '/programs' },
+    { label: 'Events [Trainings, Workshops, Webinars]', href: '/programs' },
+    { label: 'Africa Next AI Fellowship', href: '/programs' },
+    { label: 'Makemation AI Tech Festivals', href: '/programs' },
   ]
 
   const techAcademyLinks = [
-    { label: 'Technical Programs', href: '#' },
-    { label: 'Professional Programs', href: '#' },
-    { label: 'Policy & Social Impact Programs', href: '#' },
-    { label: 'Rise Networks AI Lab', href: '#' },
-    { label: 'Scholarship', href: '#' },
+    { label: 'Technical Programs', href: '/programs' },
+    { label: 'Professional Programs', href: '/programs' },
+    { label: 'Policy & Social Impact Programs', href: '/programs' },
+    { label: 'Rise Networks AI Lab', href: '/programs' },
+    { label: 'Scholarship', href: '/programs' },
   ]
 
   const knowledgeHubLinks = [

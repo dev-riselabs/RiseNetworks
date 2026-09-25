@@ -36,6 +36,21 @@
   --color-footer-muted: #9CA3AF;
   --color-footer-border: #2A2A2E;
 
+  /* Interactive Feature & Tab Colors */
+  --color-brand-green: #0EA759;
+  --color-brand-green-hover: #0C924E;
+  --color-partner-blue: #29ABE2;
+  --color-tab-inactive-bg: #F9F9FB;
+  --color-tab-inactive-hover: #F2F2F6;
+
+  /* Program Category & Accent Colors */
+  --color-program-pillar-active: #A9518B;
+  --color-track-orange: #EE7747;
+  --color-track-green: #0EA759;
+  --color-track-blue: #0284C7;
+  --color-track-purple: #8B5CF6;
+  --color-track-pink: #EC4899;
+
   /* Text & Surface Colors */
   --color-dark: #0D0D11;
   --color-muted: #52525B;
