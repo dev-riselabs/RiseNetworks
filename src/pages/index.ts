@@ -5,5 +5,7 @@ export * from './Partners'
 export * from './WhyRise'
 export * from './Programs'
 export * from './Academy'
+export * from './AiForEducationTownhall'
+export * from './AiForIndustriesTownhall'
 
 

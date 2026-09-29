@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { PageHero } from '../components/ui/PageHero'
 import { InteractiveFeatureList, type InteractiveItem } from '../components/ui/InteractiveFeatureList'
-import { CtaCard } from '../components/ui/CtaCard'
 
 interface EcosystemItem {
   title: string

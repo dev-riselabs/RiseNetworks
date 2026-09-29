@@ -10,6 +10,8 @@ const Partners = lazy(() => import('./pages/Partners'))
 const WhyRise = lazy(() => import('./pages/WhyRise'))
 const Programs = lazy(() => import('./pages/Programs'))
 const Academy = lazy(() => import('./pages/Academy'))
+const AiForEducationTownhall = lazy(() => import('./pages/AiForEducationTownhall'))
+const AiForIndustriesTownhall = lazy(() => import('./pages/AiForIndustriesTownhall'))
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/academy" element={<Academy />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/townhall" element={<AiForEducationTownhall />} />
+            <Route path="/ai-for-industries" element={<AiForIndustriesTownhall />} />
           </Routes>
         </Suspense>
       </Layout>
