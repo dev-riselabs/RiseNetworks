@@ -1,10 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { CtaCard } from '../components/ui/CtaCard'
-
-interface ResultCard {
-  title: string
-  image: string
-}
+import { InteractiveAccordion } from '../components/ui/InteractiveAccordion'
 
 interface TargetAudienceItem {
   title?: string
@@ -24,11 +20,7 @@ export const AiForEducationTownhall: React.FC = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
 
-  // What will we do tabs state
-  const [activeTabIdx, setActiveTabIdx] = useState(0)
-  const [tabTimerKey, setTabTimerKey] = useState(0)
-
-  const resultCards: ResultCard[] = [
+  const resultCards = [
     {
       title: 'Explore New\nTechnologies',
       image: '/images/home_hero_img_1.png',
@@ -145,18 +137,6 @@ export const AiForEducationTownhall: React.FC = () => {
     },
   ]
 
-  // Auto-advance for Townhall Activities Tabs (5s)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTabIdx((prev) => (prev + 1) % townhallActivities.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [tabTimerKey, townhallActivities.length])
-
-  const handleSelectTab = (idx: number) => {
-    setActiveTabIdx(idx)
-    setTabTimerKey((prev) => prev + 1)
-  }
 
   // Slider update scroll state
   const updateScrollState = () => {
@@ -427,100 +407,20 @@ export const AiForEducationTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 7. WHAT WILL WE DO IN THIS TOWNHALL SECTION */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28 border-t border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-6xl font-semibold text-dark tracking-tight leading-tight">
-              What Will We Do In This <br />
-              Townhall?
-            </h2>
-          </div>
-
-          {/* 2-Column Content: Left Tabs (#EE7747), Right Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center max-w-6xl mx-auto">
-            {/* Left Column Interactive Tabs */}
-            <div className="lg:col-span-6 flex flex-col space-y-3.5 sm:space-y-4">
-              {townhallActivities.map((item, idx) => {
-                const isActive = activeTabIdx === idx
-
-                return (
-                  <div
-                    key={item.title}
-                    onClick={() => handleSelectTab(idx)}
-                    onMouseEnter={() => handleSelectTab(idx)}
-                    className={`transition-all duration-300 rounded-2xl sm:rounded-[24px] cursor-pointer select-none ${
-                      isActive
-                        ? 'bg-primary text-white p-6 sm:p-8 shadow-sm'
-                        : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover border border-neutral-100 text-dark p-5 sm:p-6'
-                    }`}
-                  >
-                    {isActive ? (
-                      /* Active State with Circular Progress Timer & Description */
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <svg
-                            key={`tab-timer-${activeTabIdx}-${tabTimerKey}`}
-                            className="w-5 h-5 shrink-0 -rotate-90 text-white"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth={2.5}
-                              className="opacity-25"
-                              fill="none"
-                            />
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth={2.5}
-                              strokeLinecap="round"
-                              strokeDasharray="56.55"
-                              fill="none"
-                              className="animate-progress-ring"
-                            />
-                          </svg>
-
-                          <h3 className="font-bricolage text-xl sm:text-2xl font-medium text-white tracking-tight">
-                            {item.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-white/95 font-sans text-sm sm:text-base font-normal leading-relaxed mt-3 pl-8">
-                          {item.description}
-                        </p>
-                      </div>
-                    ) : (
-                      /* Inactive State */
-                      <div>
-                        <h3 className="font-bricolage text-lg sm:text-xl font-medium text-dark tracking-tight">
-                          {item.title}
-                        </h3>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Right Column Image */}
-            <div className="lg:col-span-6 w-full h-full">
-              <div className="w-full h-[380px] sm:h-[460px] lg:h-[500px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-sm">
-                <img
-                  src="/images/our_program_connected_ecosystem.png"
-                  alt="What Will We Do In This Townhall"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <InteractiveAccordion
+        title={
+          <>
+            What Will We Do In This <br />
+            Townhall?
+          </>
+        }
+        image="/images/our_program_connected_ecosystem.png"
+        imageAlt="What Will We Do In This Townhall"
+        items={townhallActivities}
+        activeBgColor="bg-primary"
+        imagePosition="right"
+        className="border-t border-neutral-100"
+      />
 
       {/* ========================================================================= */}
       {/* 8. BE THE CHANGE SECTION */}

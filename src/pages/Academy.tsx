@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/ui/Button'
+import { InteractiveAccordion } from '../components/ui/InteractiveAccordion'
 import { InteractiveFeatureList, type InteractiveItem } from '../components/ui/InteractiveFeatureList'
-
-interface ApplicationStep {
-  title: string
-  description: string
-}
 
 interface EligibilityCriterion {
   id: number
@@ -19,8 +15,6 @@ interface FaqItem {
 }
 
 export const Academy: React.FC = () => {
-  const [activeStepIndex, setActiveStepIndex] = useState(1)
-  const [timerKey, setTimerKey] = useState(0)
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
 
   // Eligibility Slider State & Ref
@@ -74,7 +68,7 @@ export const Academy: React.FC = () => {
     },
   ]
 
-  const applicationSteps: ApplicationStep[] = [
+  const applicationSteps = [
     {
       title: 'Complete the Application Form',
       description:
@@ -157,24 +151,11 @@ export const Academy: React.FC = () => {
     }
   }
 
-  // Auto-advance timer (5 seconds)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStepIndex((prev) => (prev + 1) % applicationSteps.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [timerKey, applicationSteps.length])
-
-  const handleSelectStep = (idx: number) => {
-    setActiveStepIndex(idx)
-    setTimerKey((prev) => prev + 1)
-  }
-
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
       <section
-        className="relative w-full overflow-hidden bg-cover bg-top bg-no-repeat pt-36 sm:pt-48 pb-0"
+        className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-cover bg-top bg-no-repeat pt-36 sm:pt-48 pb-0"
         style={{ backgroundImage: `url('/images/page_hero_bg.png')` }}
       >
         <div className="relative max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center">
@@ -213,100 +194,15 @@ export const Academy: React.FC = () => {
         </div>
       </section>
 
-       {/* How to Apply Section */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight">
-              How to Apply
-            </h2>
-          </div>
-
-          {/* 2-Column Content: Left Image, Right Auto-Advancing Accordion Tabs */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            {/* Left Column Image */}
-            <div className="lg:col-span-6 w-full h-full">
-              <div className="w-full h-[400px] sm:h-[480px] lg:h-[540px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-sm">
-                <img
-                  src="/images/scholarship_how_to_appply.png"
-                  alt="How to Apply for Rise Networks Scholarship"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Column Interactive Tabs */}
-            <div className="lg:col-span-6 flex flex-col space-y-3.5 sm:space-y-4">
-              {applicationSteps.map((step, idx) => {
-                const isActive = activeStepIndex === idx
-
-                return (
-                  <div
-                    key={step.title}
-                    onClick={() => handleSelectStep(idx)}
-                    onMouseEnter={() => handleSelectStep(idx)}
-                    className={`transition-all duration-300 rounded-2xl sm:rounded-[22px] cursor-pointer select-none ${
-                      isActive
-                        ? 'bg-program-pillar-active text-white p-6 sm:p-7 shadow-sm'
-                        : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-5 sm:p-6'
-                    }`}
-                  >
-                    {isActive ? (
-                      /* Active State with Circular Progress Timer & Description */
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <svg
-                            key={`apply-timer-${activeStepIndex}-${timerKey}`}
-                            className="w-5 h-5 shrink-0 -rotate-90 text-white"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              className="opacity-25"
-                              fill="none"
-                            />
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeDasharray="56.55"
-                              fill="none"
-                              className="animate-progress-ring"
-                            />
-                          </svg>
-
-                          <h3 className="font-bricolage text-xl sm:text-2xl font-medium text-white tracking-tight">
-                            {step.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-white/95 font-sans text-sm sm:text-base font-normal leading-relaxed mt-3 pl-8">
-                          {step.description}
-                        </p>
-                      </div>
-                    ) : (
-                      /* Inactive State */
-                      <div>
-                        <h3 className="font-bricolage text-lg sm:text-xl font-medium text-dark tracking-tight">
-                          {step.title}
-                        </h3>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* How to Apply Section */}
+      <InteractiveAccordion
+        title="How to Apply"
+        image="/images/scholarship_how_to_appply.png"
+        imageAlt="How to Apply for Rise Networks Scholarship"
+        items={applicationSteps}
+        activeBgColor="bg-program-pillar-active"
+        className="border-b border-neutral-100"
+      />
 
       {/* Scholarship Categories Section using InteractiveFeatureList */}
       <div className="pt-20 sm:pt-28 lg:pt-32">
@@ -390,8 +286,6 @@ export const Academy: React.FC = () => {
           </div>
         </div>
       </section>
-
-     
 
       {/* FAQs Section */}
       <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100">

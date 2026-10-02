@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
     { label: 'Why Rise Networks', href: '/why-rise-networks' },
     { label: 'FAQs', href: '/faq' },
     { label: 'The Rise Networks Framework for Global AI Leadership', href: '#' },
-    { label: 'Strategic Vision & Futuristic Outlook', href: '#' },
+    { label: 'Strategic Vision & Futuristic Outlook', href: '/strategic-vision' },
   ]
 
   const whatWeDoLinks = [

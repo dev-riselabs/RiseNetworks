@@ -1,16 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { PageHero } from '../components/ui/PageHero'
+import { InteractiveAccordion } from '../components/ui/InteractiveAccordion'
 import { InteractiveFeatureList, type InteractiveItem } from '../components/ui/InteractiveFeatureList'
-
-interface EcosystemItem {
-  title: string
-  description: string
-}
-
-interface ProgramPillar {
-  title: string
-  description: string
-}
 
 interface ProgramTrackCard {
   title: string
@@ -18,38 +9,12 @@ interface ProgramTrackCard {
 }
 
 export const Programs: React.FC = () => {
-  // One Connected Ecosystem state
-  const [activeEcosystemIndex, setActiveEcosystemIndex] = useState(0)
-  const [ecosystemTimerKey, setEcosystemTimerKey] = useState(0)
-
-  // Our Program Pillars state
-  const [activePillarIndex, setActivePillarIndex] = useState(3)
-  const [pillarTimerKey, setPillarTimerKey] = useState(0)
-
   // Program Tracks slider state
   const sliderRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
 
-  const ecosystemItems: EcosystemItem[] = [
-    {
-      title: 'Technical Programs',
-      description:
-        'Provide structured, research informed training in Artificial Intelligence, Data Science, and emerging technologies. Through a blend of theoretical depth and hands on application, learners gain the skills required to thrive in a rapidly evolving digital economy while contributing to locally relevant innovation.',
-    },
-    {
-      title: 'Professional Programs',
-      description:
-        'Tailored for working professionals, executives, and organizations seeking to build internal AI fluency, navigate digital disruption, and lead technology-driven transformations across diverse industries.',
-    },
-    {
-      title: 'Policy & Social Impact Programs',
-      description:
-        'Focused on Tech Justice, Digital Rights, algorithmic accountability, and inclusive governance to ensure emerging technologies foster equity, protect citizens, and empower all communities.',
-    },
-  ]
-
-  const programPillars: ProgramPillar[] = [
+  const programPillars = [
     {
       title: 'AI Skills Development & Inclusive Workforce Transformation',
       description:
@@ -74,6 +39,24 @@ export const Programs: React.FC = () => {
       title: 'Tech Justice, Digital Rights & AI Safety',
       description:
         'Advancing algorithmic fairness, data sovereignty, and human rights protections to ensure digital technologies empower all communities.',
+    },
+  ]
+
+  const ecosystemItems = [
+    {
+      title: 'Technical Programs',
+      description:
+        'Provide structured, research informed training in Artificial Intelligence, Data Science, and emerging technologies. Through a blend of theoretical depth and hands on application, learners gain the skills required to thrive in a rapidly evolving digital economy while contributing to locally relevant innovation.',
+    },
+    {
+      title: 'Professional Programs',
+      description:
+        'Tailored for working professionals, executives, and organizations seeking to build internal AI fluency, navigate digital disruption, and lead technology-driven transformations across diverse industries.',
+    },
+    {
+      title: 'Policy & Social Impact Programs',
+      description:
+        'Focused on Tech Justice, Digital Rights, algorithmic accountability, and inclusive governance to ensure emerging technologies foster equity, protect citizens, and empower all communities.',
     },
   ]
 
@@ -121,22 +104,6 @@ export const Programs: React.FC = () => {
     },
   ]
 
-  // Auto-advance for One Connected Ecosystem (5s)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveEcosystemIndex((prev) => (prev + 1) % ecosystemItems.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [ecosystemTimerKey, ecosystemItems.length])
-
-  // Auto-advance for Program Pillars (5s)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActivePillarIndex((prev) => (prev + 1) % programPillars.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [pillarTimerKey, programPillars.length])
-
   // Slider scroll management
   const updateScrollState = () => {
     if (sliderRef.current) {
@@ -173,16 +140,6 @@ export const Programs: React.FC = () => {
     }
   }
 
-  const handleSelectEcosystem = (idx: number) => {
-    setActiveEcosystemIndex(idx)
-    setEcosystemTimerKey((prev) => prev + 1)
-  }
-
-  const handleSelectPillar = (idx: number) => {
-    setActivePillarIndex(idx)
-    setPillarTimerKey((prev) => prev + 1)
-  }
-
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
@@ -191,200 +148,27 @@ export const Programs: React.FC = () => {
         subtitle="Building talent, shaping policy, and advancing ethical AI across Africa."
       />
 
-        {/* Our Program Pillars Section (#A9518B) */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight">
-              Our Program Pillars
-            </h2>
-          </div>
-
-          {/* 2-Column Content: Left Image, Right Auto-Advancing Accordion Tabs */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            {/* Left Column Image */}
-            <div className="lg:col-span-6 w-full h-full">
-              <div className="w-full h-[400px] sm:h-[480px] lg:h-[540px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-sm">
-                <img
-                  src="/images/our_program_img.png"
-                  alt="Our Program Pillars"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Column Interactive Tabs */}
-            <div className="lg:col-span-6 flex flex-col space-y-3.5 sm:space-y-4">
-              {programPillars.map((pillar, idx) => {
-                const isActive = activePillarIndex === idx
-
-                return (
-                  <div
-                    key={pillar.title}
-                    onClick={() => handleSelectPillar(idx)}
-                    onMouseEnter={() => handleSelectPillar(idx)}
-                    className={`transition-all duration-300 rounded-2xl sm:rounded-[22px] cursor-pointer select-none ${
-                      isActive
-                        ? 'bg-program-pillar-active text-white p-6 sm:p-7 shadow-sm'
-                        : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-5 sm:p-6'
-                    }`}
-                  >
-                    {isActive ? (
-                      /* Active State with Circular Progress Timer & Description */
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <svg
-                            key={`pillar-timer-${activePillarIndex}-${pillarTimerKey}`}
-                            className="w-5 h-5 shrink-0 -rotate-90 text-white"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              className="opacity-25"
-                              fill="none"
-                            />
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeDasharray="56.55"
-                              fill="none"
-                              className="animate-progress-ring"
-                            />
-                          </svg>
-
-                          <h3 className="font-bricolage text-xl sm:text-2xl font-medium text-white tracking-tight">
-                            {pillar.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-white/95 font-sans text-sm sm:text-base font-normal leading-relaxed mt-3 pl-8">
-                          {pillar.description}
-                        </p>
-                      </div>
-                    ) : (
-                      /* Inactive State */
-                      <div>
-                        <h3 className="font-bricolage text-lg sm:text-xl font-medium text-dark tracking-tight">
-                          {pillar.title}
-                        </h3>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Our Program Pillars Section (#A9518B) */}
+      <InteractiveAccordion
+        title="Our Program Pillars"
+        image="/images/our_program_img.png"
+        imageAlt="Our Program Pillars"
+        items={programPillars}
+        activeBgColor="bg-program-pillar-active"
+        className="border-b border-neutral-100"
+      />
 
       {/* One Connected Ecosystem Section (#EE7747) */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-4">
-              One Connected Ecosystem
-            </h2>
-            <p className="font-sans text-base sm:text-lg text-muted font-normal leading-relaxed">
-              Our programs connect technical training, professional growth, research and policy to prepare Africa to shape the future of AI.
-            </p>
-          </div>
-
-          {/* 2-Column Content: Left Tabs (#EE7747), Right Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            {/* Left Column Interactive Tabs */}
-            <div className="lg:col-span-6 flex flex-col space-y-3.5 sm:space-y-4 order-2 lg:order-1">
-              {ecosystemItems.map((item, idx) => {
-                const isActive = activeEcosystemIndex === idx
-
-                return (
-                  <div
-                    key={item.title}
-                    onClick={() => handleSelectEcosystem(idx)}
-                    onMouseEnter={() => handleSelectEcosystem(idx)}
-                    className={`transition-all duration-300 rounded-2xl sm:rounded-[22px] cursor-pointer select-none ${
-                      isActive
-                        ? 'bg-primary text-white p-6 sm:p-7 shadow-sm'
-                        : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-5 sm:p-6'
-                    }`}
-                  >
-                    {isActive ? (
-                      /* Active State with Circular Progress Timer & Description */
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <svg
-                            key={`eco-timer-${activeEcosystemIndex}-${ecosystemTimerKey}`}
-                            className="w-5 h-5 shrink-0 -rotate-90 text-white"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              className="opacity-25"
-                              fill="none"
-                            />
-                            <circle
-                              cx="12"
-                              cy="12"
-                              r="9"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeDasharray="56.55"
-                              fill="none"
-                              className="animate-progress-ring"
-                            />
-                          </svg>
-
-                          <h3 className="font-bricolage text-xl sm:text-2xl font-medium text-white tracking-tight">
-                            {item.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-white/95 font-sans text-sm sm:text-base font-normal leading-relaxed mt-3 pl-8">
-                          {item.description}
-                        </p>
-                      </div>
-                    ) : (
-                      /* Inactive State */
-                      <div>
-                        <h3 className="font-bricolage text-lg sm:text-xl font-medium text-dark tracking-tight">
-                          {item.title}
-                        </h3>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Right Column Image */}
-            <div className="lg:col-span-6 w-full h-full order-1 lg:order-2">
-              <div className="w-full h-[400px] sm:h-[480px] lg:h-[540px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-sm">
-                <img
-                  src="/images/our_program_connected_ecosystem.png"
-                  alt="One Connected Ecosystem"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    
+      <InteractiveAccordion
+        title="One Connected Ecosystem"
+        subtitle="Our programs connect technical training, professional growth, research and policy to prepare Africa to shape the future of AI."
+        image="/images/our_program_connected_ecosystem.png"
+        imageAlt="One Connected Ecosystem"
+        items={ecosystemItems}
+        activeBgColor="bg-primary"
+        imagePosition="right"
+        className="border-b border-neutral-100"
+      />
 
       {/* Program Tracks Slider Section */}
       <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100 overflow-hidden">
@@ -464,8 +248,6 @@ export const Programs: React.FC = () => {
         subtitle="We also build platforms that shape culture, education and research."
         items={innovationPlatforms}
       />
-
-     
     </div>
   )
 }

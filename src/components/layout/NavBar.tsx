@@ -9,6 +9,7 @@ export const NavBar: React.FC = () => {
 
   const meetRiseDropdown = [
     { label: 'About Us', href: '/about-us', description: 'Our history, mission, vision and leadership' },
+    { label: 'Strategic Vision', href: '/strategic-vision', description: 'Strategic vision and futuristic outlook' },
     { label: 'Why Rise Networks', href: '/why-rise-networks', description: 'What sets our AI leadership and impact apart' },
     { label: 'Our Partners', href: '/partners', description: 'Collaborate and sponsor the next generation' },
     { label: 'FAQs', href: '/faq', description: 'Answers to frequently asked questions' },

@@ -12,6 +12,7 @@ const Programs = lazy(() => import('./pages/Programs'))
 const Academy = lazy(() => import('./pages/Academy'))
 const AiForEducationTownhall = lazy(() => import('./pages/AiForEducationTownhall'))
 const AiForIndustriesTownhall = lazy(() => import('./pages/AiForIndustriesTownhall'))
+const StrategicVision = lazy(() => import('./pages/StrategicVision'))
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/partners" element={<Partners />} />
             <Route path="/townhall" element={<AiForEducationTownhall />} />
             <Route path="/ai-for-industries" element={<AiForIndustriesTownhall />} />
+            <Route path="/strategic-vision" element={<StrategicVision />} />
           </Routes>
         </Suspense>
       </Layout>

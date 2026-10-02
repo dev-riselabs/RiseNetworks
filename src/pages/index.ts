@@ -7,5 +7,6 @@ export * from './Programs'
 export * from './Academy'
 export * from './AiForEducationTownhall'
 export * from './AiForIndustriesTownhall'
+export * from './StrategicVision'
 
 
