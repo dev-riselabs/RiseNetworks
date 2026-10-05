@@ -8,5 +8,8 @@ export * from './Academy'
 export * from './AiForEducationTownhall'
 export * from './AiForIndustriesTownhall'
 export * from './StrategicVision'
-
-
+export * from './Articles'
+export * from './ArticleDetail'
+export * from './Donate'
+export * from './GlobalAiLeadership'
+export * from './Research'

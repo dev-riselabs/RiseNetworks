@@ -28,7 +28,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
       className={`relative w-full overflow-hidden bg-cover bg-top bg-no-repeat ${
         isFullHeight
           ? 'min-h-screen flex flex-col justify-between pt-36 sm:pt-48 pb-0'
-          : 'flex flex-col items-center justify-center pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-20 lg:pb-24'
+          : 'min-h-[55vh] sm:min-h-[60vh] lg:min-h-[68vh] flex flex-col items-center justify-center pt-36 sm:pt-44 lg:pt-52 pb-20 sm:pb-28 lg:pb-32'
       } ${className}`}
       style={{ backgroundImage: `url('${bgImage}')` }}
     >

@@ -9,9 +9,13 @@ export const NavBar: React.FC = () => {
 
   const meetRiseDropdown = [
     { label: 'About Us', href: '/about-us', description: 'Our history, mission, vision and leadership' },
+    { label: 'Global AI Leadership', href: '/global-ai-leadership', description: 'Our framework for global AI leadership and sovereign impact' },
+    { label: 'Our Research', href: '/research', description: 'Interdisciplinary research in AI ethics, governance and human development' },
     { label: 'Strategic Vision', href: '/strategic-vision', description: 'Strategic vision and futuristic outlook' },
+    { label: 'Insights & Articles', href: '/articles', description: 'Research papers, AI policy insights and articles' },
     { label: 'Why Rise Networks', href: '/why-rise-networks', description: 'What sets our AI leadership and impact apart' },
     { label: 'Our Partners', href: '/partners', description: 'Collaborate and sponsor the next generation' },
+    { label: 'Support & Donate', href: '/donate', description: 'Empower Africa’s next generation of AI leaders' },
     { label: 'FAQs', href: '/faq', description: 'Answers to frequently asked questions' },
   ]
 

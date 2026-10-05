@@ -15,6 +15,7 @@ export interface InteractiveAccordionProps {
   imagePosition?: 'left' | 'right'
   activeBgColor?: string
   autoPlayInterval?: number
+  defaultIndex?: number
   className?: string
   imageClassName?: string
 }
@@ -29,10 +30,11 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
   imagePosition = 'left',
   activeBgColor = 'bg-brand-green',
   autoPlayInterval = 5000,
+  defaultIndex = 0,
   className = '',
   imageClassName = '',
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(defaultIndex)
   const [timerKey, setTimerKey] = useState(0)
 
   // Auto-advance timer

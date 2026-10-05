@@ -27,15 +27,16 @@ export const Footer: React.FC = () => {
   ]
 
   const knowledgeHubLinks = [
-    { label: 'Blog', href: '#' },
-    { label: 'Insights & Articles', href: '#' },
-    { label: 'Research Papers', href: '#' },
-    { label: 'Newsletters', href: '#' },
-    { label: 'Research & Advisory', href: '#' },
+    { label: 'Blog', href: '/articles' },
+    { label: 'Insights & Articles', href: '/articles' },
+    { label: 'Research Papers', href: '/articles' },
+    { label: 'Newsletters', href: '/articles' },
+    { label: 'Research & Advisory', href: '/articles' },
   ]
 
   const getInTouchLinks = [
     { label: 'Partner With Us', href: '/partners' },
+    { label: 'Support & Donate', href: '/donate' },
     { label: 'Become a Mentor', href: '#' },
     { label: 'Volunteer', href: '#' },
     { label: 'Careers', href: '#' },
