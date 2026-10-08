@@ -105,8 +105,8 @@ export const Donate: React.FC = () => {
     }
   }
 
-  const scrollToBankDetails = () => {
-    const el = document.getElementById('bank-details-section')
+  const scrollToWaysToGive = () => {
+    const el = document.getElementById('ways-to-give')
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
     }
@@ -122,7 +122,7 @@ export const Donate: React.FC = () => {
       >
         <button
           type="button"
-          onClick={scrollToBankDetails}
+          onClick={scrollToWaysToGive}
           className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-base font-medium shadow-md transition-all duration-200 cursor-pointer group"
         >
           <span>Become a Donor</span>
@@ -216,12 +216,14 @@ export const Donate: React.FC = () => {
       </section>
 
       {/* 4. Ways to Give Interactive Section matching user reference screenshot */}
-      <InteractiveFeatureList
-        title="Ways to Give"
-        subtitle="Choose the level of partnership that aligns with your impact goals"
-        items={WAYS_TO_GIVE_ITEMS}
-        defaultIndex={0}
-      />
+      <div id="ways-to-give">
+        <InteractiveFeatureList
+          title="Ways to Give"
+          subtitle="Choose the level of partnership that aligns with your impact goals"
+          items={WAYS_TO_GIVE_ITEMS}
+          defaultIndex={0}
+        />
+      </div>
 
       {/* 5. Empower the Next Generation Banner matching screenshot */}
       <section className="w-full bg-white py-16 sm:py-24 text-center">
@@ -231,7 +233,7 @@ export const Donate: React.FC = () => {
           </h2>
           <button
             type="button"
-            onClick={scrollToBankDetails}
+            onClick={scrollToWaysToGive}
             className="inline-flex items-center gap-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold font-bricolage text-primary hover:text-primary-hover transition-colors cursor-pointer group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">&rarr;</span>
@@ -240,68 +242,7 @@ export const Donate: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Direct Wire & Institutional Banking Details */}
-      <section id="bank-details-section" className="py-16 bg-[#141416] text-white">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-bricolage text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3">
-              Direct Bank Wire & Institutional Grants
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-300">
-              For corporate matching, philanthropic foundations, and diaspora wire transfers,
-              funds can be disbursed directly into our dedicated accounts:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Naira Account */}
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-                  Naira (NGN) Account
-                </span>
-                <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-neutral-300">
-                  Nigeria & West Africa
-                </span>
-              </div>
-              <h4 className="text-base font-bold text-white">Rise Networks AI Initiative</h4>
-              <p className="text-xs text-neutral-400">
-                Bank: <strong>Access Bank Plc</strong>
-              </p>
-              <p className="text-xs text-neutral-400">
-                Account Number: <strong>0706054502</strong>
-              </p>
-              <p className="text-xs text-neutral-400">
-                Sort Code: <strong>044150149</strong>
-              </p>
-            </div>
-
-            {/* USD Domiciliary Account */}
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-                  USD Domiciliary Account
-                </span>
-                <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-neutral-300">
-                  International & Diaspora
-                </span>
-              </div>
-              <h4 className="text-base font-bold text-white">Rise Networks Global AI Fund</h4>
-              <p className="text-xs text-neutral-400">
-                Bank: <strong>Access Bank Plc</strong>
-              </p>
-              <p className="text-xs text-neutral-400">
-                Account Number: <strong>1402948192</strong>
-              </p>
-              <p className="text-xs text-neutral-400">
-                SWIFT / BIC: <strong>ACCENGGLAG</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Bottom CTA Overlapping into Footer */}
+      {/* 6. Bottom CTA Overlapping into Footer */}
       <CtaCard overlapFooter={true} />
     </div>
   )

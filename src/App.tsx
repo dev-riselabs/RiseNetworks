@@ -18,6 +18,8 @@ const ArticleDetail = lazy(() => import('./pages/ArticleDetail'))
 const Donate = lazy(() => import('./pages/Donate'))
 const GlobalAiLeadership = lazy(() => import('./pages/GlobalAiLeadership'))
 const Research = lazy(() => import('./pages/Research'))
+const Events = lazy(() => import('./pages/Events'))
+const Projects = lazy(() => import('./pages/Projects'))
 
 const App = () => {
   return (
@@ -42,6 +44,8 @@ const App = () => {
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:id" element={<ArticleDetail />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </Suspense>
       </Layout>

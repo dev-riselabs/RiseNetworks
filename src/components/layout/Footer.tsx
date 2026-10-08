@@ -12,10 +12,11 @@ export const Footer: React.FC = () => {
 
   const whatWeDoLinks = [
     { label: 'Operational Focus Areas', href: '/programs' },
+    { label: 'Our Projects', href: '/projects' },
     { label: 'Our Program Pillars', href: '/programs' },
-    { label: 'Events [Trainings, Workshops, Webinars]', href: '/programs' },
+    { label: 'Events [Trainings, Workshops, Webinars]', href: '/events' },
     { label: 'Africa Next AI Fellowship', href: '/programs' },
-    { label: 'Makemation AI Tech Festivals', href: '/programs' },
+    { label: 'Makemation AI Tech Festivals', href: '/events' },
   ]
 
   const techAcademyLinks = [

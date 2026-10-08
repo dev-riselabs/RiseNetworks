@@ -12,6 +12,8 @@ export const NavBar: React.FC = () => {
     { label: 'Global AI Leadership', href: '/global-ai-leadership', description: 'Our framework for global AI leadership and sovereign impact' },
     { label: 'Our Research', href: '/research', description: 'Interdisciplinary research in AI ethics, governance and human development' },
     { label: 'Strategic Vision', href: '/strategic-vision', description: 'Strategic vision and futuristic outlook' },
+    { label: 'Events & Convenings', href: '/events', description: 'Townhalls, masterclasses, summits and tech festivals' },
+    { label: 'Our Projects', href: '/projects', description: 'AI systems, research platforms and policy initiatives' },
     { label: 'Insights & Articles', href: '/articles', description: 'Research papers, AI policy insights and articles' },
     { label: 'Why Rise Networks', href: '/why-rise-networks', description: 'What sets our AI leadership and impact apart' },
     { label: 'Our Partners', href: '/partners', description: 'Collaborate and sponsor the next generation' },
