@@ -20,6 +20,8 @@ const GlobalAiLeadership = lazy(() => import('./pages/GlobalAiLeadership'))
 const Research = lazy(() => import('./pages/Research'))
 const Events = lazy(() => import('./pages/Events'))
 const Projects = lazy(() => import('./pages/Projects'))
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 const App = () => {
   return (
@@ -36,6 +38,8 @@ const App = () => {
             <Route path="/academy" element={<Academy />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact-us" element={<Contact />} />
             <Route path="/townhall" element={<AiForEducationTownhall />} />
             <Route path="/ai-for-industries" element={<AiForIndustriesTownhall />} />
             <Route path="/strategic-vision" element={<StrategicVision />} />
@@ -46,6 +50,8 @@ const App = () => {
             <Route path="/donate" element={<Donate />} />
             <Route path="/events" element={<Events />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/project-detail" element={<ProjectDetail />} />
           </Routes>
         </Suspense>
       </Layout>

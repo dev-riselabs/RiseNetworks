@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { PageHero } from '../components/ui/PageHero'
 
 type ProjectCategory =
@@ -275,14 +276,13 @@ export const Projects: React.FC = () => {
 
                   {/* Bottom Action Button */}
                   <div className="px-6 sm:px-7 pb-6 sm:pb-7 pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-primary text-white text-xs sm:text-sm font-medium cursor-pointer"
+                    <Link
+                      to={`/projects/${project.id}`}
+                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-medium transition-colors cursor-pointer"
                     >
                       <span>View Project</span>
                       <span>&rarr;</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}

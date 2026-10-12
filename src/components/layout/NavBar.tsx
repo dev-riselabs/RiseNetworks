@@ -25,7 +25,7 @@ export const NavBar: React.FC = () => {
     { label: 'Meet Rise', href: '/about-us', hasDropdown: true, subLinks: meetRiseDropdown },
     { label: 'What we do', href: '/programs', hasDropdown: false },
     { label: 'Academy', href: '/academy', hasDropdown: false },
-    { label: 'Contact', href: '/partners', hasDropdown: false },
+    { label: 'Contact', href: '/contact', hasDropdown: false },
   ]
 
   return (
