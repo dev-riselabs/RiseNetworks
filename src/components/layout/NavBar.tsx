@@ -57,8 +57,8 @@ export const NavBar: React.FC = () => {
           />
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-dark">
+        {/* Desktop Navigation Links - lg and above */}
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-dark">
           {navLinks.map((link) => {
             const isParentActive =
               (link.href !== '#' && location.pathname === link.href) ||
@@ -116,8 +116,6 @@ export const NavBar: React.FC = () => {
                               </Link>
                             )
                           })}
-
-                     
                       </div>
                     </div>
                   </div>
@@ -151,8 +149,8 @@ export const NavBar: React.FC = () => {
           })}
         </nav>
 
-        {/* Action / CTA Button */}
-        <div className="hidden md:flex items-center">
+        {/* Action / CTA Button - lg and above */}
+        <div className="hidden lg:flex items-center">
           <Link to="/partners">
             <Button variant="primary" size="lg" rounded="full">
               Get Started
@@ -160,11 +158,11 @@ export const NavBar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobile menu button with smooth morphing toggle */}
+        {/* Mobile & Tablet menu button with smooth morphing toggle */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="md:hidden relative w-11 h-11 flex items-center justify-center rounded-full bg-white/90 hover:bg-white backdrop-blur-md border border-neutral-200/80 shadow-xs text-dark transition-all duration-200 active:scale-95 cursor-pointer z-50"
+          className="lg:hidden relative w-11 h-11 flex items-center justify-center rounded-full bg-white/90 hover:bg-white backdrop-blur-md border border-neutral-200/80 shadow-xs text-dark transition-all duration-200 active:scale-95 cursor-pointer z-50"
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
         >
@@ -188,18 +186,18 @@ export const NavBar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Backdrop Overlay */}
+      {/* Mobile & Tablet Backdrop Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-dark/30 backdrop-blur-xs z-40 md:hidden animate-fade-in"
+          className="fixed inset-0 bg-dark/30 backdrop-blur-xs z-40 lg:hidden animate-fade-in"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
         />
       )}
 
-      {/* Floating Mobile Navigation Card with Margins */}
+      {/* Floating Mobile & Tablet Navigation Card with Margins */}
       {mobileMenuOpen && (
-        <div className="relative z-50 md:hidden px-4 sm:px-6 mt-2 max-w-[95vw] mx-auto animate-mobile-menu">
+        <div className="relative z-50 lg:hidden px-4 sm:px-6 mt-2 max-w-[95vw] sm:max-w-[85vw] mx-auto animate-mobile-menu">
           <div className="bg-white/95 backdrop-blur-2xl rounded-3xl border border-neutral-200/90 shadow-2xl shadow-neutral-900/15 p-4 sm:p-5 flex flex-col max-h-[calc(100vh-130px)] overflow-y-auto">
             {/* Nav list */}
             <div className="flex flex-col gap-1.5">
@@ -242,7 +240,7 @@ export const NavBar: React.FC = () => {
                       </button>
 
                       {meetRiseOpen && (
-                        <div className="mt-1 mb-2 ml-4 pl-3.5 border-l-2 border-primary/30 flex flex-col gap-1 py-1 animate-mobile-menu">
+                        <div className="mt-1 mb-2 ml-2 sm:ml-4 pl-3 sm:pl-3.5 border-l-2 border-primary/30 grid grid-cols-1 sm:grid-cols-2 gap-1.5 py-1 animate-mobile-menu">
                           {link.subLinks.map((sub) => {
                             const isSubActive = location.pathname === sub.href
                             return (
