@@ -160,7 +160,7 @@ export const Partners: React.FC = () => {
 
       {/* Why Partner With Us Section */}
       <section className="w-full bg-white pt-16 sm:pt-24 pb-16 sm:pb-24">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           <div className="max-w-4xl">
             <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-[44px] font-medium text-dark tracking-tight leading-tight mb-4 sm:mb-6">
               Why Partner With Us?
@@ -174,7 +174,7 @@ export const Partners: React.FC = () => {
 
       {/* Your Impact Starts Here Section (Slider) */}
       <section className="w-full bg-white py-12 sm:py-16 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-6xl font-medium text-dark tracking-tight leading-tight mb-4">
@@ -258,12 +258,12 @@ export const Partners: React.FC = () => {
       />
 
       {/* The Future Starts Here Section */}
-      <section className="w-full py-16 sm:py-24 lg:py-28 bg-white text-center">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center">
-          <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-6xl font-medium text-dark tracking-tight leading-tight mb-4">
+      <section className="w-full py-10 sm:py-16 lg:py-24 bg-white text-center">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center">
+          <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-6xl font-medium text-dark tracking-tight leading-tight mb-2 sm:mb-4">
             The future starts here
           </h2>
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-muted font-normal leading-relaxed max-w-2xl mb-8 sm:mb-10">
+          <p className="font-sans text-sm sm:text-lg lg:text-xl text-muted font-normal leading-relaxed max-w-2xl mb-5 sm:mb-8">
             Partner with us to create opportunities and scale inclusive, ethical AI education across Africa.
           </p>
 

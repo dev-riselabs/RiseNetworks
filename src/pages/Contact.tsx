@@ -37,7 +37,7 @@ export const Contact: React.FC = () => {
     <div className="w-full bg-white">
       {/* Contact Form Section */}
       <section className="w-full pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-24">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Main Title matching Screenshot */}
           <h1 className="font-bricolage text-3xl sm:text-4xl md:text-5xl font-semibold text-dark text-center tracking-tight mb-12 sm:mb-16">
             Contact Us

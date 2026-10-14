@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full bg-[#141416] text-[#A1A1AA] pt-8 sm:pt-14 pb-12 overflow-hidden">
-      <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         
         {/* Top Header: Logo & Tagline */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-14">

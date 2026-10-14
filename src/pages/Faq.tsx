@@ -155,17 +155,17 @@ export const Faq: React.FC = () => {
       />
 
       {/* FAQ Sections List */}
-      <section className="w-full py-16 sm:py-24 lg:py-28">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col space-y-20 sm:space-y-28 lg:space-y-32">
+      <section className="w-full py-10 sm:py-16 lg:py-24">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col space-y-12 sm:space-y-20 lg:space-y-32">
           {faqSections.map((section) => (
             <div
               key={section.id}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-start"
+              className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 lg:gap-16 items-start"
             >
               {/* Left Column: Category Name */}
               <div className="md:col-span-4 lg:col-span-4 sticky top-28">
                 <h2
-                  className="font-bricolage text-3xl sm:text-4xl lg:text-[40px] font-medium tracking-tight whitespace-pre-line leading-tight"
+                  className="font-bricolage text-2xl sm:text-4xl lg:text-[40px] font-medium tracking-tight whitespace-pre-line leading-tight"
                   style={{ color: section.color }}
                 >
                   {section.title}

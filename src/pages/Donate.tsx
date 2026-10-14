@@ -142,14 +142,14 @@ export const Donate: React.FC = () => {
       />
 
       {/* 3. Your Impact Carousel Section matching reference screenshot */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 overflow-hidden">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
+            <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-2 sm:mb-4">
               Your Impact
             </h2>
-            <p className="font-sans text-base sm:text-lg text-muted font-normal leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-sm sm:text-lg text-muted font-normal leading-relaxed max-w-2xl mx-auto">
               When you donate, you directly expand access <br className="hidden sm:inline" />
               to opportunity and accelerate Africa’s AI future.
             </p>
@@ -158,12 +158,12 @@ export const Donate: React.FC = () => {
           {/* Horizontal Carousel */}
           <div
             ref={sliderRef}
-            className="flex items-center gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-4 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 sm:py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {IMPACT_CAROUSEL_ITEMS.map((item) => (
               <div
                 key={item.id}
-                className="shrink-0 snap-start w-[300px] sm:w-[380px] lg:w-[440px] h-[420px] sm:h-[480px] lg:h-[520px] rounded-[28px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
+                className="shrink-0 snap-start w-[270px] sm:w-[380px] lg:w-[440px] h-[360px] sm:h-[480px] lg:h-[520px] rounded-[24px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
               >
                 {/* Background Image */}
                 <img
@@ -177,7 +177,7 @@ export const Donate: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Bottom Card Text */}
-                <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6 p-4 sm:p-6 bg-white/95 backdrop-blur-md rounded-[20px] sm:rounded-[24px] shadow-lg border border-white/80">
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 p-4 sm:p-6 bg-white/95 backdrop-blur-md rounded-[18px] sm:rounded-[24px] shadow-lg border border-white/80">
                   <p className="font-sans text-xs sm:text-sm lg:text-[15px] font-normal text-dark leading-relaxed">
                     {item.description}
                   </p>
@@ -187,13 +187,13 @@ export const Donate: React.FC = () => {
           </div>
 
           {/* Carousel Navigation Buttons (Bottom Right) */}
-          <div className="flex items-center justify-end gap-3 mt-8 sm:mt-10">
+          <div className="flex items-center justify-end gap-3 mt-4 sm:mt-8 lg:mt-10">
             <button
               type="button"
               onClick={handlePrev}
               disabled={!canScrollLeft}
               aria-label="Previous slide"
-              className="w-12 h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -205,7 +205,7 @@ export const Donate: React.FC = () => {
               onClick={handleNext}
               disabled={!canScrollRight}
               aria-label="Next slide"
-              className="w-12 h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -226,15 +226,15 @@ export const Donate: React.FC = () => {
       </div>
 
       {/* 5. Empower the Next Generation Banner matching screenshot */}
-      <section className="w-full bg-white py-16 sm:py-24 text-center">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
-          <h2 className="font-bricolage text-3xl sm:text-4xl md:text-5xl font-semibold text-dark tracking-tight leading-tight mb-4">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 text-center">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+          <h2 className="font-bricolage text-2xl sm:text-4xl md:text-5xl font-semibold text-dark tracking-tight leading-tight mb-2 sm:mb-4">
             Empower the next generation.
           </h2>
           <button
             type="button"
             onClick={scrollToWaysToGive}
-            className="inline-flex items-center gap-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold font-bricolage text-primary hover:text-primary-hover transition-colors cursor-pointer group"
+            className="inline-flex items-center gap-2 text-xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold font-bricolage text-primary hover:text-primary-hover transition-colors cursor-pointer group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">&rarr;</span>
             <span className="underline decoration-primary underline-offset-8">Donate Today</span>

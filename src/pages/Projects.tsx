@@ -195,7 +195,7 @@ export const Projects: React.FC = () => {
 
       {/* 2. Category Filter Pills */}
       <section className="w-full pt-10 sm:pt-14 pb-10 bg-white">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id
@@ -220,7 +220,7 @@ export const Projects: React.FC = () => {
 
       {/* 3. Projects Grid matching screenshot */}
       <section className="w-full pb-24 sm:pb-32 bg-white">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-20 bg-[#FAFAFA] rounded-3xl border border-dashed border-neutral-300">
               <p className="text-base text-neutral-500">No projects in this category currently.</p>

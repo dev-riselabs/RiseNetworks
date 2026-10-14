@@ -466,7 +466,7 @@ export const ProjectDetail: React.FC = () => {
       {/* bannerImage: project_detail_helchetics.png (Banner) */}
       <section className="w-full pt-20 sm:pt-24 lg:pt-28 bg-white">
         {/* Navigation Breadcrumb / Back button */}
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full pt-4 pb-4 sm:pb-6">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full pt-4 pb-4 sm:pb-6">
           <button
             type="button"
             onClick={() => navigate('/projects')}
@@ -495,7 +495,7 @@ export const ProjectDetail: React.FC = () => {
       </section>
 
       {/* 2. Main Content Container matching Screenshots 1, 2, 3, 4 */}
-      <article className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full pt-10 sm:pt-14 pb-24 sm:pb-32">
+      <article className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full pt-10 sm:pt-14 pb-24 sm:pb-32">
         {/* Category Pill Tag */}
         <div className="mb-3.5">
           <span

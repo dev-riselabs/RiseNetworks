@@ -25,8 +25,8 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
   const [activeIndex, setActiveIndex] = useState(defaultIndex)
 
   return (
-    <section className={`relative w-full bg-white pb-24 sm:pb-32 lg:pb-36 overflow-visible ${className}`}>
-      <div className="relative max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <section className={`relative w-full bg-white pb-12 sm:pb-24 lg:pb-36 overflow-visible ${className}`}>
+      <div className="relative max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         {/* SVG Background Grid lines */}
         <div className="pointer-events-none absolute right-6 sm:right-8 lg:right-12 top-0 bottom-0 w-1/2 lg:w-5/12 h-full z-0 overflow-hidden hidden sm:block">
           <svg
@@ -47,12 +47,12 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
         </div>
 
         {/* Section Header */}
-        <div className="relative z-10 mb-12 sm:mb-16">
-          <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-4">
+        <div className="relative z-10 mb-6 sm:mb-12 lg:mb-16">
+          <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-2 sm:mb-4">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-base sm:text-lg text-muted font-normal leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-lg text-muted font-normal leading-relaxed max-w-2xl">
               {subtitle}
             </p>
           )}
@@ -75,10 +75,10 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
                 >
                   {isActive ? (
                     /* Active Row Layout with Description/Bullets on left and Protruding Image on the Right */
-                    <div className="relative py-7 sm:py-9 px-6 sm:px-10 flex items-center justify-between min-h-[160px] sm:min-h-[180px] overflow-visible">
+                    <div className="relative py-5 sm:py-9 px-4 sm:px-10 flex flex-col md:flex-row items-start md:items-center justify-between min-h-0 sm:min-h-[180px] overflow-visible">
                       {/* Text content on the left */}
-                      <div className="max-w-xl lg:max-w-2xl pr-4">
-                        <h3 className="font-bricolage text-2xl sm:text-3xl font-medium text-dark tracking-tight leading-snug mb-3">
+                      <div className="max-w-xl lg:max-w-2xl pr-0 md:pr-4 w-full md:w-auto">
+                        <h3 className="font-bricolage text-xl sm:text-3xl font-medium text-dark tracking-tight leading-snug mb-2 sm:mb-3">
                           {item.title}
                         </h3>
 
@@ -89,11 +89,11 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
                         )}
 
                         {item.bullets && item.bullets.length > 0 && (
-                          <ul className="space-y-2 mt-2">
+                          <ul className="space-y-1.5 sm:space-y-2 mt-2">
                             {item.bullets.map((bullet, bIdx) => (
                               <li
                                 key={bIdx}
-                                className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-[15px] text-muted font-normal leading-relaxed"
+                                className="flex items-start gap-2 text-xs sm:text-sm lg:text-[15px] text-muted font-normal leading-relaxed"
                               >
                                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-dark mt-2 shrink-0" />
                                 <span>{bullet}</span>
@@ -117,14 +117,14 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full max-w-[280px] h-auto object-cover rounded-[20px] shadow-md"
+                          className="w-full max-w-[260px] h-auto object-cover rounded-[18px] shadow-md"
                         />
                       </div>
                     </div>
                   ) : (
                     /* Inactive Collapsed Row */
-                    <div className="py-6 sm:py-8 px-6 sm:px-10 flex items-center justify-between">
-                      <h3 className="font-bricolage text-2xl sm:text-3xl lg:text-[32px] font-medium text-dark tracking-tight">
+                    <div className="py-4 sm:py-8 px-4 sm:px-10 flex items-center justify-between">
+                      <h3 className="font-bricolage text-lg sm:text-3xl lg:text-[32px] font-medium text-dark tracking-tight">
                         {item.title}
                       </h3>
                     </div>

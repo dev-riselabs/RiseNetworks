@@ -73,8 +73,8 @@ export const ArticleDetail: React.FC = () => {
   }
 
   return (
-    <div className="w-full bg-white pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-28">
-      <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <div className="w-full bg-white pt-36 sm:pt-44 lg:pt-48 pb-20 sm:pb-28">
+      <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         {/* Back navigation button */}
         <button
           type="button"

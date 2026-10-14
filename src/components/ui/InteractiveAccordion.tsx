@@ -56,34 +56,34 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
   const isImageLeft = imagePosition === 'left'
 
   return (
-    <section className={`w-full bg-white py-16 sm:py-24 lg:py-32 ${className}`}>
-      <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <section className={`w-full bg-white py-10 sm:py-16 lg:py-24 ${className}`}>
+      <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
           {badge && (
             <span className="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-orange-100 text-primary mb-3">
               {badge}
             </span>
           )}
-          <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-4">
+          <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-2 sm:mb-4">
             {title}
           </h2>
           {subtitle && (
-            <p className="font-sans text-base sm:text-lg text-muted font-normal leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-sm sm:text-lg text-muted font-normal leading-relaxed max-w-2xl mx-auto">
               {subtitle}
             </p>
           )}
         </div>
 
         {/* 2-Column Content: Image & Interactive Accordion */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
           {/* Image Column */}
           <div
             className={`lg:col-span-6 w-full h-full ${
               isImageLeft ? 'order-1' : 'order-1 lg:order-2'
             }`}
           >
-            <div className={`w-full h-[380px] sm:h-[460px] lg:h-[600px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-sm ${imageClassName}`}>
+            <div className={`w-full h-[260px] sm:h-[420px] lg:h-[580px] rounded-[24px] sm:rounded-[36px] overflow-hidden shadow-sm ${imageClassName}`}>
               <img
                 src={image}
                 alt={imageAlt}
@@ -94,7 +94,7 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
 
           {/* Accordion Tabs Column */}
           <div
-            className={`lg:col-span-6 flex flex-col space-y-3.5 sm:space-y-4 ${
+            className={`lg:col-span-6 flex flex-col space-y-3 sm:space-y-4 ${
               isImageLeft ? 'order-2' : 'order-2 lg:order-1'
             }`}
           >
@@ -108,8 +108,8 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
                   onMouseEnter={() => handleSelect(idx)}
                   className={`transition-all duration-300 rounded-2xl sm:rounded-[22px] cursor-pointer select-none ${
                     isActive
-                      ? `${activeBgColor} text-white p-6 sm:p-7 shadow-sm`
-                      : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-5 sm:p-6'
+                      ? `${activeBgColor} text-white p-5 sm:p-7 shadow-sm`
+                      : 'bg-tab-inactive-bg hover:bg-tab-inactive-hover text-dark p-4 sm:p-6'
                   }`}
                 >
                   {isActive ? (

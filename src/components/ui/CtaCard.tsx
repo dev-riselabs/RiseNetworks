@@ -18,7 +18,7 @@ export const CtaCard: React.FC<CtaCardProps> = ({ className = '', overlapFooter 
   }
 
   const cardContent = (
-    <div className="w-full max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
+    <div className="w-full max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
       {/* Outer Wavy Background Container */}
       <div
         className="w-full rounded-[32px] sm:rounded-[44px] p-8 sm:p-14 lg:p-20 flex items-center justify-center bg-cover bg-center shadow-2xl"

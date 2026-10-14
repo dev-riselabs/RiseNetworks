@@ -293,11 +293,11 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 2. WHY THIS SERIES MATTERS SECTION */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 overflow-hidden">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight mb-3">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-14">
+            <h2 className="font-bricolage text-2xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight mb-2 sm:mb-3">
               Why This Series Matters
             </h2>
           </div>
@@ -305,12 +305,12 @@ export const AiForIndustriesTownhall: React.FC = () => {
           {/* Cards Slider */}
           <div
             ref={sliderRef}
-            className="flex items-center gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-4 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 sm:py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className="shrink-0 snap-start w-[300px] sm:w-[360px] lg:w-[440px] h-[400px] sm:h-[460px] lg:h-[500px] rounded-[28px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
+                className="shrink-0 snap-start w-[270px] sm:w-[360px] lg:w-[440px] h-[360px] sm:h-[460px] lg:h-[500px] rounded-[24px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
               >
                 {/* Background Image */}
                 <img
@@ -323,8 +323,8 @@ export const AiForIndustriesTownhall: React.FC = () => {
                 <div className="absolute inset-0 bg-black/20 rounded-[inherit] pointer-events-none" />
 
                 {/* White Floating Content Badge at Bottom */}
-                <div className="absolute bottom-6 left-5 right-5 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 shadow-md border border-white/60">
-                  <h3 className="font-bricolage font-semibold text-base sm:text-lg text-dark mb-1 leading-snug">
+                <div className="absolute bottom-4 sm:bottom-6 left-4 right-4 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-md border border-white/60">
+                  <h3 className="font-bricolage font-semibold text-sm sm:text-lg text-dark mb-1 leading-snug">
                     {card.title}
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -336,13 +336,13 @@ export const AiForIndustriesTownhall: React.FC = () => {
           </div>
 
           {/* Slider Controls (Bottom Right) */}
-          <div className="flex items-center justify-end gap-3 mt-6 sm:mt-8">
+          <div className="flex items-center justify-end gap-3 mt-4 sm:mt-8">
             <button
               type="button"
               onClick={handlePrev}
               disabled={!canScrollLeft}
               aria-label="Previous slide"
-              className="w-12 h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -354,7 +354,7 @@ export const AiForIndustriesTownhall: React.FC = () => {
               onClick={handleNext}
               disabled={!canScrollRight}
               aria-label="Next slide"
-              className="w-12 h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -367,48 +367,48 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 3. DESIGNED FOR DEPTH, DIALOGUE, AND OUTCOMES (BENTO GRID) */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28 border-t border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 border-t border-neutral-100">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-3xl sm:text-5xl lg:text-6xl font-semibold text-dark tracking-tight leading-[1.15]">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
+            <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-6xl font-semibold text-dark tracking-tight leading-[1.15]">
               Designed For Depth, <br />
               Dialogue, And Outcomes
             </h2>
           </div>
 
           {/* Bento Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 max-w-6xl mx-auto items-stretch">
             {/* Left Column: Large Tall Card with Image + Text */}
-            <div className="lg:col-span-5 bg-[#FAFAFA] border border-neutral-100 rounded-[28px] sm:rounded-[36px] p-6 sm:p-7 flex flex-col justify-between shadow-xs">
-              <div className="w-full h-[240px] sm:h-[280px] rounded-2xl sm:rounded-[24px] overflow-hidden mb-6">
+            <div className="lg:col-span-5 bg-[#FAFAFA] border border-neutral-100 rounded-[24px] sm:rounded-[36px] p-5 sm:p-7 flex flex-col justify-between shadow-xs">
+              <div className="w-full h-[200px] sm:h-[280px] rounded-2xl sm:rounded-[24px] overflow-hidden mb-4 sm:mb-6">
                 <img
                   src="/images/ai_indus_1.png"
                   alt="Focused discussions"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="font-sans text-sm sm:text-base text-neutral-700 font-normal leading-relaxed">
+              <p className="font-sans text-xs sm:text-base text-neutral-700 font-normal leading-relaxed">
                 Focused discussions identifying sector-specific challenges and solutions with live Q and A sessions.
               </p>
             </div>
 
             {/* Right Column: Top Wide Card + Bottom 2 Split Cards */}
-            <div className="lg:col-span-7 flex flex-col gap-6 sm:gap-8 justify-between">
+            <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-8 justify-between">
               {/* Top Card: Keynote Presentations */}
-              <div className="bg-[#FAFAFA] border border-neutral-100 rounded-[28px] sm:rounded-[36px] p-8 sm:p-10 flex flex-col justify-center shadow-xs flex-1">
-                <h3 className="font-bricolage text-2xl sm:text-3xl lg:text-[32px] font-semibold text-dark mb-4 sm:mb-6">
+              <div className="bg-[#FAFAFA] border border-neutral-100 rounded-[24px] sm:rounded-[36px] p-6 sm:p-10 flex flex-col justify-center shadow-xs flex-1">
+                <h3 className="font-bricolage text-xl sm:text-3xl lg:text-[32px] font-semibold text-dark mb-2 sm:mb-6">
                   Keynote Presentations
                 </h3>
-                <p className="font-sans text-sm sm:text-base text-neutral-700 font-normal leading-relaxed max-w-xl">
+                <p className="font-sans text-xs sm:text-base text-neutral-700 font-normal leading-relaxed max-w-xl">
                   Explore how AI can improve access to education, enhance learning outcomes and promote equity across Africa.
                 </p>
               </div>
 
               {/* Bottom 2 Split Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
                 {/* Bottom Left: Image Card (ai_indus_2.png) */}
-                <div className="h-[240px] sm:h-[260px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-xs">
+                <div className="h-[200px] sm:h-[260px] rounded-[24px] sm:rounded-[36px] overflow-hidden shadow-xs">
                   <img
                     src="/images/ai_indus_2.png"
                     alt="Fireside session"
@@ -417,9 +417,9 @@ export const AiForIndustriesTownhall: React.FC = () => {
                 </div>
 
                 {/* Bottom Right: Fireside Conversations */}
-                <div className="bg-[#FAFAFA] border border-neutral-100 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 flex flex-col justify-between shadow-xs h-[240px] sm:h-[260px]">
-                  <h3 className="font-bricolage text-2xl sm:text-[28px] font-semibold text-dark leading-tight">
-                    Fireside <br />
+                <div className="bg-[#FAFAFA] border border-neutral-100 rounded-[24px] sm:rounded-[36px] p-5 sm:p-8 flex flex-col justify-between shadow-xs min-h-0 sm:min-h-[260px]">
+                  <h3 className="font-bricolage text-xl sm:text-[28px] font-semibold text-dark leading-tight mb-2 sm:mb-0">
+                    Fireside <br className="hidden sm:inline" />
                     Conversations
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-neutral-700 font-normal leading-relaxed">
@@ -435,14 +435,14 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 4. FOCUS AREAS SECTION */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 overflow-hidden">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+            <h2 className="font-bricolage text-2xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight mb-2 sm:mb-4">
               Focus Areas
             </h2>
-            <p className="font-sans text-base sm:text-lg text-neutral-700 font-normal leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-sm sm:text-lg text-neutral-700 font-normal leading-relaxed max-w-2xl mx-auto">
               Each Town Hall explores how AI can unlock opportunity <br className="hidden sm:inline" />
               while addressing policy and ethical considerations.
             </p>
@@ -451,12 +451,12 @@ export const AiForIndustriesTownhall: React.FC = () => {
           {/* Cards Slider */}
           <div
             ref={focusSliderRef}
-            className="flex items-center gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-4 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 sm:py-4 no-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {focusAreas.map((card, idx) => (
               <div
                 key={idx}
-                className="shrink-0 snap-start w-[290px] sm:w-[350px] lg:w-[410px] h-[380px] sm:h-[450px] lg:h-[490px] rounded-[32px] sm:rounded-[40px] overflow-hidden relative shadow-sm group select-none"
+                className="shrink-0 snap-start w-[260px] sm:w-[350px] lg:w-[410px] h-[340px] sm:h-[450px] lg:h-[490px] rounded-[24px] sm:rounded-[40px] overflow-hidden relative shadow-sm group select-none"
               >
                 {/* Background Image */}
                 <img
@@ -469,8 +469,8 @@ export const AiForIndustriesTownhall: React.FC = () => {
                 <div className="absolute inset-0 rounded-[inherit] bg-black/35 pointer-events-none" />
 
                 {/* Card Title on Top Center */}
-                <div className="absolute top-0 left-0 right-0 pt-7 sm:pt-9 px-6 text-center z-10">
-                  <h3 className="font-bricolage text-2xl sm:text-3xl font-medium text-white leading-snug tracking-tight">
+                <div className="absolute top-0 left-0 right-0 pt-6 sm:pt-9 px-4 sm:px-6 text-center z-10">
+                  <h3 className="font-bricolage text-xl sm:text-3xl font-medium text-white leading-snug tracking-tight">
                     {card.title}
                   </h3>
                 </div>
@@ -479,13 +479,13 @@ export const AiForIndustriesTownhall: React.FC = () => {
           </div>
 
           {/* Slider Controls (Bottom Right) */}
-          <div className="flex items-center justify-end gap-3 mt-6 sm:mt-8">
+          <div className="flex items-center justify-end gap-3 mt-4 sm:mt-8">
             <button
               type="button"
               onClick={handleFocusPrev}
               disabled={!canFocusScrollLeft}
               aria-label="Previous slide"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-neutral-300 hover:border-dark text-dark bg-white hover:bg-neutral-50 flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -497,7 +497,7 @@ export const AiForIndustriesTownhall: React.FC = () => {
               onClick={handleFocusNext}
               disabled={!canFocusScrollRight}
               aria-label="Next slide"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#141416] hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 shadow-xs"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -511,20 +511,20 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* 5. WHO IS THIS TOWNHALL MEANT FOR SECTION */}
       {/* ========================================================================= */}
       <section
-        className="w-full bg-cover bg-center bg-no-repeat py-24 sm:py-32 relative overflow-hidden"
+        className="w-full bg-cover bg-center bg-no-repeat py-12 sm:py-20 lg:py-32 relative overflow-hidden"
         style={{ backgroundImage: `url('/images/townhall_who.png')` }}
       >
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-dark leading-[1.15]">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
+            <h2 className="font-bricolage text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-dark leading-[1.15]">
               Who is this <br />
               Townhall meant for?
             </h2>
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {targetAudience.map((item, idx) => {
               if (item.isEmpty) {
                 return <div key={idx} className="hidden lg:block" />
@@ -532,11 +532,11 @@ export const AiForIndustriesTownhall: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white/40 backdrop-blur-2xl border border-white/60 rounded-3xl p-8 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-white/70 hover:shadow-md flex flex-col justify-between min-h-[250px] sm:min-h-[280px]"
+                  className="bg-white/40 backdrop-blur-2xl border border-white/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-white/70 hover:shadow-md flex flex-col justify-between min-h-0 sm:min-h-[240px] lg:min-h-[280px]"
                 >
-                  <div className="mb-8">{item.icon}</div>
+                  <div className="mb-4 sm:mb-8">{item.icon}</div>
                   <div>
-                    <h3 className="font-bricolage font-semibold text-lg sm:text-xl text-dark tracking-tight mb-2">
+                    <h3 className="font-bricolage font-semibold text-base sm:text-xl text-dark tracking-tight mb-1 sm:mb-2">
                       {item.title}
                     </h3>
                     <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -553,11 +553,11 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 6. UPCOMING TOWN HALL SERIES (BANNER & OVERVIEW) */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-20 sm:py-28">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center justify-center text-center">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center justify-center text-center">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-14">
+            <h2 className="font-bricolage text-2xl sm:text-4xl lg:text-5xl font-semibold text-dark tracking-tight leading-tight">
               Upcoming Town Hall Series
             </h2>
           </div>
@@ -572,7 +572,7 @@ export const AiForIndustriesTownhall: React.FC = () => {
           </div>
 
           {/* Text underneath */}
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-neutral-700 font-normal leading-relaxed max-w-3xl mx-auto mt-8 sm:mt-12 text-center">
+          <p className="font-sans text-sm sm:text-lg lg:text-xl text-neutral-700 font-normal leading-relaxed max-w-3xl mx-auto mt-5 sm:mt-8 lg:mt-12 text-center">
             Join over 1,000 education stakeholders from across the globe to explore how artificial intelligence can transform learning, bridge educational gaps, and prepare Africa for a future driven by creativity, technology, and global competitiveness.
           </p>
         </div>
@@ -599,16 +599,16 @@ export const AiForIndustriesTownhall: React.FC = () => {
       {/* ========================================================================= */}
       {/* 8. CO-HOST. PARTNER. CONTRIBUTE SECTION */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 text-center">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center justify-center">
-          <h2 className="font-bricolage text-3xl sm:text-5xl lg:text-6xl font-semibold text-dark tracking-tight mb-2 sm:mb-4">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 text-center">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center justify-center">
+          <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-6xl font-semibold text-dark tracking-tight mb-2 sm:mb-4">
             Co-Host. Partner. Contribute.
           </h2>
           <a
             href="https://forms.gle"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bricolage text-3xl sm:text-5xl lg:text-6xl font-semibold text-primary hover:text-primary-hover transition-colors inline-flex items-center gap-3 sm:gap-4 group cursor-pointer"
+            className="font-bricolage text-2xl sm:text-5xl lg:text-6xl font-semibold text-primary hover:text-primary-hover transition-colors inline-flex items-center gap-2 sm:gap-4 group cursor-pointer"
           >
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             <span>Collaborate With Us</span>

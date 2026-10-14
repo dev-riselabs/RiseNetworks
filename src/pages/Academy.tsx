@@ -155,23 +155,23 @@ export const Academy: React.FC = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <section
-        className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-cover bg-top bg-no-repeat pt-36 sm:pt-48 pb-0"
+        className="relative w-full flex flex-col justify-between overflow-hidden bg-cover bg-top bg-no-repeat pt-32 sm:pt-40 lg:pt-48 min-h-[520px] sm:min-h-[640px] lg:min-h-screen pb-0"
         style={{ backgroundImage: `url('/images/page_hero_bg.png')` }}
       >
-        <div className="relative max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center">
+        <div className="relative max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center">
           {/* Main Title */}
-          <h1 className="font-bricolage text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium tracking-tight text-dark leading-[1.08] text-center max-w-4xl mx-auto">
+          <h1 className="font-bricolage text-3xl sm:text-5xl md:text-6xl lg:text-[76px] font-medium tracking-tight text-dark leading-[1.12] text-center max-w-4xl mx-auto">
             Rise Networks <br />
             Tech Academy
           </h1>
 
           {/* Subtitle */}
-          <p className="font-sans text-base sm:text-lg md:text-xl text-muted font-normal leading-relaxed text-center max-w-2xl mx-auto mt-4 sm:mt-6">
+          <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-muted font-normal leading-relaxed text-center max-w-2xl mx-auto mt-4 sm:mt-6">
             From Data Science to Cybersecurity, we equip you with the skills to drive innovation and compete globally.
           </p>
 
           {/* CTA Action Button */}
-          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-7 sm:mt-9 lg:mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link to="/partners">
               <Button variant="primary" size="lg" rounded="full" className="px-7 sm:px-8 py-3.5 text-base font-medium shadow-sm hover:shadow">
                 <span>Become a Partner</span>
@@ -184,7 +184,7 @@ export const Academy: React.FC = () => {
         </div>
 
         {/* Full-width Scholarship Collage Image Banner */}
-        <div className="w-full mt-12 sm:mt-16 lg:mt-20">
+        <div className="w-full mt-8 sm:mt-12 lg:mt-16">
           <img
             src="/images/scholarship_hero_page.png"
             alt="Rise Networks Tech Academy Programs, Training and Impact"
@@ -205,7 +205,7 @@ export const Academy: React.FC = () => {
       />
 
       {/* Scholarship Categories Section using InteractiveFeatureList */}
-      <div className="pt-20 sm:pt-28 lg:pt-32">
+      <div className="pt-10 sm:pt-16 lg:pt-24">
         <InteractiveFeatureList
           title="Scholarship Categories"
           subtitle="Designed to support different levels of talent, need and potential."
@@ -215,11 +215,11 @@ export const Academy: React.FC = () => {
       </div>
 
       {/* Eligibility Slider Section */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 border-b border-neutral-100 overflow-hidden">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-3">
               Eligibility
             </h2>
             <p className="font-sans text-base sm:text-lg lg:text-xl text-muted font-normal leading-relaxed">
@@ -235,7 +235,7 @@ export const Academy: React.FC = () => {
             {eligibilityCriteria.map((item) => (
               <div
                 key={item.id}
-                className="shrink-0 snap-start w-[300px] sm:w-[380px] lg:w-[440px] h-[420px] sm:h-[480px] lg:h-[520px] rounded-[28px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
+                className="shrink-0 snap-start w-[280px] sm:w-[360px] lg:w-[420px] h-[360px] sm:h-[440px] lg:h-[500px] rounded-[24px] sm:rounded-[36px] overflow-hidden relative shadow-md group select-none"
               >
                 {/* Background Image */}
                 <img
@@ -288,8 +288,8 @@ export const Academy: React.FC = () => {
       </section>
 
       {/* FAQs Section */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32 border-b border-neutral-100">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <section className="w-full bg-white py-10 sm:py-16 lg:py-24 border-b border-neutral-100">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           {/* Upper Part: Title Left, Accordion Right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pb-16 sm:pb-20 border-b border-neutral-200/80">
             {/* Left Column: FAQs in orange */}
@@ -364,7 +364,7 @@ export const Academy: React.FC = () => {
       </section>
 
       {/* Change the Future CTA Section */}
-      <section className="w-full bg-white py-20 sm:py-28 lg:py-36 text-center">
+      <section className="w-full bg-white py-12 sm:py-20 lg:py-28 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-5xl font-medium text-dark tracking-tight mb-4 sm:mb-6">
             Change the Future.

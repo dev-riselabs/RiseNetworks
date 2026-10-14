@@ -353,7 +353,7 @@ export const Events: React.FC = () => {
 
       {/* 2. Featured Carousel Section matching user screenshot */}
       <section className="w-full bg-white pt-10 sm:pt-14 md:pt-16 pb-16 sm:pb-24 overflow-hidden">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           <div
             onMouseEnter={() => setIsCarouselHovered(true)}
             onMouseLeave={() => setIsCarouselHovered(false)}
@@ -495,7 +495,7 @@ export const Events: React.FC = () => {
 
       {/* 3. Grid of Event Cards matching screenshot with events_ai_festival.png & Pagination */}
       <section className="w-full pb-20 sm:pb-28 bg-white">
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
           
           {/* 6-Card Grid (3 columns x 2 rows) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

@@ -327,7 +327,7 @@ export const Articles: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-12 w-full">
+      <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-12 w-full">
         {/* Category Filter & Search Bar */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10 pb-6 border-b border-neutral-100">
           {/* Category Filter Pills */}

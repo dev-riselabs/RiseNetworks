@@ -27,27 +27,27 @@ export const PageHero: React.FC<PageHeroProps> = ({
     <section
       className={`relative w-full overflow-hidden bg-cover bg-top bg-no-repeat ${
         isFullHeight
-          ? 'min-h-screen flex flex-col justify-between pt-36 sm:pt-48 pb-0'
-          : 'min-h-[55vh] sm:min-h-[60vh] lg:min-h-[68vh] flex flex-col items-center justify-center pt-36 sm:pt-44 lg:pt-52 pb-20 sm:pb-28 lg:pb-32'
+          ? 'flex flex-col justify-between pt-32 sm:pt-40 lg:pt-48 min-h-[500px] sm:min-h-[620px] lg:min-h-screen pb-0'
+          : 'flex flex-col items-center justify-center pt-32 sm:pt-40 lg:pt-48 pb-12 sm:pb-20 lg:pb-28 min-h-[46vh] lg:min-h-[65vh]'
       } ${className}`}
       style={{ backgroundImage: `url('${bgImage}')` }}
     >
-      <div className="relative max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center w-full">
+      <div className="relative max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center text-center w-full">
         {/* Main Title */}
-        <h1 className="font-bricolage text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium tracking-tight text-dark leading-[1.08] text-center max-w-4xl mx-auto">
+        <h1 className="font-bricolage text-3xl sm:text-5xl md:text-6xl lg:text-[76px] font-medium tracking-tight text-dark leading-[1.12] text-center max-w-4xl mx-auto">
           {title}
         </h1>
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="font-sans text-base sm:text-lg md:text-xl text-muted font-normal leading-relaxed text-center max-w-2xl mx-auto mt-4 sm:mt-6">
+          <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-muted font-normal leading-relaxed text-center max-w-2xl mx-auto mt-4 sm:mt-6">
             {subtitle}
           </p>
         )}
 
         {/* Action Buttons or Extra Content */}
         {children && (
-          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             {children}
           </div>
         )}
@@ -55,7 +55,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
 
       {/* Optional bottom banner image (like Academy and Strategic Vision hero) */}
       {bannerImage && (
-        <div className="w-full mt-12 sm:mt-16 lg:mt-20">
+        <div className="w-full mt-8 sm:mt-12 lg:mt-16">
           <img
             src={bannerImage}
             alt={bannerAlt}

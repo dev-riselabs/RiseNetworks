@@ -91,21 +91,21 @@ export const About: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-40 pb-16 sm:pb-24 max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center">
+      <section className="pt-36 sm:pt-44 lg:pt-48 pb-10 sm:pb-16 lg:pb-24 max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center">
         {/* Main Title */}
-        <h1 className="font-bricolage text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.12] text-center max-w-4xl mx-auto">
+        <h1 className="font-bricolage text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.12] text-center max-w-4xl mx-auto">
           Building Africa’s
           <br />
           Digital Capacity
         </h1>
 
         {/* Subtitle */}
-        <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed text-center max-w-2xl mx-auto mt-4 sm:mt-6">
+        <p className="font-sans text-sm sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed text-center max-w-2xl mx-auto mt-3 sm:mt-6">
           Driving Africa’s digital future by uniting AI, technology, policy, and people for sustainable growth.
         </p>
 
         {/* Hero Image */}
-        <div className="mt-10 sm:mt-14 w-full rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm border border-neutral-100">
+        <div className="mt-6 sm:mt-10 lg:mt-14 w-full rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm border border-neutral-100">
           <img
             src="/images/about_hero_img.png"
             alt="Building Africa's Digital Capacity - Rise Networks AI Labs"
@@ -115,43 +115,43 @@ export const About: React.FC = () => {
       </section>
 
       {/* Mission, Vision & Commitment Section */}
-      <section className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <section className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column: Big Reality Statement */}
           <div className="lg:col-span-6">
-            <h2 className="font-sans text-2xl sm:text-3xl lg:text-[40px] font-medium leading-[1.45] lg:leading-[1.5] text-[#141416] tracking-tight">
+            <h2 className="font-sans text-xl sm:text-3xl lg:text-[40px] font-medium leading-[1.45] lg:leading-[1.5] text-[#141416] tracking-tight">
               Rise Networks was born from a simple but urgent reality: Africa’s digital future cannot be built without ethical, inclusive and globally competitive AI talent.
             </h2>
           </div>
 
           {/* Right Column: Mission, Vision, Commitment */}
-          <div className="lg:col-span-6 flex flex-col space-y-10 sm:space-y-12">
+          <div className="lg:col-span-6 flex flex-col space-y-6 sm:space-y-10 lg:space-y-12">
             {/* Mission */}
             <div>
-              <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-[#EE7747] tracking-tight mb-3">
+              <h3 className="font-sans text-xl sm:text-3xl font-semibold text-[#EE7747] tracking-tight mb-2 sm:mb-3">
                 Mission
               </h3>
-              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.85] sm:leading-[1.95]">
+              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.75] sm:leading-[1.95]">
                 To ensure that technology becomes a tool for equity, empowerment and inclusive innovation and equip Africa’s talents and organizations with future-ready skills, advance Tech Justice and Digital Rights, influence AI policy and foster community transformation through research, training, advisory, and advocacy.
               </p>
             </div>
 
             {/* Vision */}
             <div>
-              <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-[#10B981] tracking-tight mb-3">
+              <h3 className="font-sans text-xl sm:text-3xl font-semibold text-[#10B981] tracking-tight mb-2 sm:mb-3">
                 Vision
               </h3>
-              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.85] sm:leading-[1.95]">
+              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.75] sm:leading-[1.95]">
                 To become Africa’s leading hub for Artificial Intelligence talent and ethical innovation; empowering people with world-class skills, fostering inclusive opportunities and shaping a future-ready workforce and equitable futures that drives sustainable development locally and competes globally.
               </p>
             </div>
 
             {/* Our Commitment */}
             <div>
-              <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-[#38BDF8] tracking-tight mb-3">
+              <h3 className="font-sans text-xl sm:text-3xl font-semibold text-[#38BDF8] tracking-tight mb-2 sm:mb-3">
                 Our Commitment
               </h3>
-              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.85] sm:leading-[1.95]">
+              <p className="font-sans text-sm sm:text-base text-neutral-600 leading-[1.75] sm:leading-[1.95]">
                 Rise Networks is committed to building Africa’s next generation of globally competitive AI talent by ensuring marginalized voices are actively included in the digital future, promoting privacy, freedom of expression and digital literacy, and transforming technology into a powerful tool for equitable opportunity and social empowerment, while advancing ethical innovation, strengthening cross sector collaboration, and continuously refining its objectives to drive efficient, globally relevant and sustainable impact.
               </p>
             </div>
@@ -161,32 +161,32 @@ export const About: React.FC = () => {
 
       {/* We are here for Africa Section */}
       <section
-        className="w-full bg-cover bg-center bg-no-repeat py-24 sm:py-32 relative overflow-hidden"
+        className="w-full bg-cover bg-center bg-no-repeat py-12 sm:py-20 lg:py-32 relative overflow-hidden"
         style={{ backgroundImage: `url('/images/about_we_are_here_bg.png')` }}
       >
-        <div className="max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-bricolage text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
+            <h2 className="font-bricolage text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
               We are here
               <br />
               for Africa
             </h2>
-            <p className="font-sans text-base sm:text-lg text-neutral-600 font-normal leading-relaxed mt-4 sm:mt-5 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-lg text-neutral-600 font-normal leading-relaxed mt-3 sm:mt-5 max-w-xl mx-auto">
               We put people first, focusing on access, inclusion and real outcomes that turn learning into opportunity.
             </p>
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-14 sm:mt-18">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto mt-8 sm:mt-14 lg:mt-18">
             {features.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-4xl p-8 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-white/55 hover:shadow-md flex flex-col justify-between min-h-[260px] sm:min-h-[290px]"
+                className="bg-white/10 backdrop-blur-3xl border border-white/20 rounded-3xl sm:rounded-4xl p-6 sm:p-8 lg:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-white/55 hover:shadow-md flex flex-col justify-between min-h-0 sm:min-h-[240px] lg:min-h-[290px]"
               >
-                <div className="mb-8">{item.icon}</div>
+                <div className="mb-4 sm:mb-8">{item.icon}</div>
                 <div>
-                  <h3 className="font-sans font-semibold text-lg sm:text-xl text-[#141416] tracking-tight mb-2">
+                  <h3 className="font-sans font-semibold text-base sm:text-xl text-[#141416] tracking-tight mb-1 sm:mb-2">
                     {item.title}
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -200,29 +200,29 @@ export const About: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 sm:py-28 max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="py-10 sm:py-16 lg:py-28 max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12">
         {/* Badge & Heading */}
-        <div className="mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-testimonial-badge-bg border border-testimonial-badge-border text-testimonial-badge-text text-xs sm:text-sm font-medium mb-4">
+        <div className="mb-6 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-testimonial-badge-bg border border-testimonial-badge-border text-testimonial-badge-text text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             Meet our team
           </div>
-          <h2 className="font-bricolage text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141416]">
+          <h2 className="font-bricolage text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#141416]">
             The right skills with the right people.
           </h2>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {teamMembers.map((member, idx) => (
             <div key={idx} className="flex flex-col group">
-              <div className="rounded-[22px] sm:rounded-[28px] overflow-hidden aspect-square w-full mb-3.5 bg-neutral-100 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="rounded-[18px] sm:rounded-[28px] overflow-hidden aspect-square w-full mb-2.5 sm:mb-3.5 bg-neutral-100 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
                 <img
                   src={member.image}
                   alt={`${member.name} - ${member.role}`}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight">
+              <h3 className="font-sans font-bold text-sm sm:text-lg text-neutral-900 tracking-tight">
                 {member.name}
               </h3>
               <p className="font-sans text-xs sm:text-sm text-neutral-400 font-normal mt-0.5">
