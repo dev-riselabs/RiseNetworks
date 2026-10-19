@@ -432,7 +432,7 @@ export const Events: React.FC = () => {
                         'Join fellow innovators, researchers, youth builders, and tech leaders at this high-impact convening.',
                     })
                   }
-                  className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#F15A24] hover:bg-[#D94E1D] text-white text-base font-semibold transition-colors cursor-pointer text-center"
+                  className="w-full sm:w-auto px-10 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-base font-semibold transition-colors cursor-pointer text-center"
                 >
                   {currentSlide.buttonText || 'Register'}
                 </button>
@@ -467,7 +467,7 @@ export const Events: React.FC = () => {
                       aria-label={`Go to slide ${dotIdx + 1}`}
                       className={`transition-all duration-300 cursor-pointer rounded-full ${
                         isActive
-                          ? 'w-2.5 h-2.5 bg-[#F15A24] scale-110'
+                          ? 'w-2.5 h-2.5 bg-primary scale-110'
                           : 'w-2 h-2 bg-neutral-300 hover:bg-neutral-400'
                       }`}
                     />
@@ -572,7 +572,7 @@ export const Events: React.FC = () => {
                   }}
                   className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'bg-[#F15A24] text-white'
+                      ? 'bg-primary text-white'
                       : 'text-neutral-700 hover:text-dark hover:bg-neutral-100'
                   }`}
                 >

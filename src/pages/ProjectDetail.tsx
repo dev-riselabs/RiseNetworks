@@ -6,11 +6,12 @@ export interface ProjectDetailItem {
   id: string
   title: string
   badgeLabel: string
-  bannerImage: string
+  bannerImage?: string
+  solidColor?: string
   overview: string
   challenge: string
   solution: string
-  howItWorks: string
+  howItWorks?: string
   potentialImpact: string
   keyTechnologies: string[]
 }
@@ -39,27 +40,27 @@ export const PROJECT_DETAILS_DATA: Record<string, ProjectDetailItem> = {
       'Physiological data collection',
     ],
   },
-  'shedetectit-bra': {
-    id: 'shedetectit-bra',
-    title: 'SheDetectIt Bra',
+  shedetectit: {
+    id: 'shedetectit',
+    title: 'SheDetectIt',
     badgeLabel: 'Health',
     bannerImage: '/images/project_shedetectit.png',
     overview:
       'SheDetectIt is a wearable technology prototype designed to explore how sensors and data collection can support breast health monitoring and the early identification of potential irregularities.',
     challenge:
-      'Early detection of breast health irregularities significantly improves clinical outcomes, yet routine, accessible, and comfortable early-stage screening tools remain unavailable to many women.',
+      'Breast cancer remains a major health challenge, and early detection plays an important role in improving treatment outcomes. There is a need for accessible and non invasive approaches that can support breast health awareness and monitoring.',
     solution:
-      'SheDetectIt integrates flexible medical sensors into a comfortable, non-invasive wearable prototype that continuously gathers key physiological signals without causing disruption to daily life.',
+      'The SheDetectIt Bra integrates sensors into a wearable garment to collect selected data from the breast area. The project explores how wearable technology can contribute to the development of more accessible breast health monitoring solutions.',
     howItWorks:
-      'The wearable incorporates temperature and ultrasonic transducer arrays connected to an embedded processing board. The system continuously evaluates baseline metrics and alerts the user to significant physiological deviations.',
+      'The prototype uses an Arduino microcontroller connected to an AD8232 ECG sensor and a temperature sensor. The sensors collect data from the user, which is processed by the microcontroller and displayed on an LCD screen.',
     potentialImpact:
-      'Empowers women with proactive, dignified, and regular health awareness, encouraging early professional diagnosis and timely medical care.',
+      'SheDetectIt demonstrates the potential application of wearable technology in supporting breast health awareness and the development of future tools for early screening and monitoring.',
     keyTechnologies: [
+      'Arduino',
       'Ultrasonic sensors',
-      'High-precision temperature sensors',
-      'Microcontroller board',
-      'Smart textile integration',
-      'Real-time LCD telemetry display',
+      'Temperature sensors',
+      'LCD display',
+      'Wearable technology',
     ],
   },
   'cerebral-bci': {
@@ -70,49 +71,41 @@ export const PROJECT_DETAILS_DATA: Record<string, ProjectDetailItem> = {
     overview:
       'Cerebral BCI is a Brain Computer Interface prototype exploring how brain signals can be captured and interpreted to enable interaction between a user and an external device.',
     challenge:
-      'Assistive devices for individuals with severe motor and vocal impairments are often prohibitively expensive and complicated to calibrate for everyday home or clinic use.',
+      'People with severe physical or motor limitations may experience difficulties interacting with their environment and communicating through conventional physical interfaces.',
     solution:
-      'Cerebral BCI utilizes non-invasive biosensors to detect microvolt EEG waveforms from the user scalp, decoding intent to drive external assistive peripherals.',
+      'Cerebral BCI explores the use of brain signal technology as an alternative form of interaction between users and external devices.',
     howItWorks:
-      'The headset uses dry electrodes and signal processing filters to capture motor imagery signals, translating mental commands into digital triggers through on-device machine learning classifiers.',
+      'The prototype combines a helmet based sensing system, an Arduino microcontroller and a computer. The system is designed to collect brain related signals, process the data and display the resulting information on a computer.',
     potentialImpact:
-      'Demonstrates the viability of low-cost, open-hardware neurotechnology to bridge accessibility gaps and restore communication independence.',
+      'The project explores the potential of Brain Computer Interface technology to support accessibility, assistive technology, human machine interaction and future research into brain based communication systems.',
     keyTechnologies: [
-      'Dry contact EEG electrodes',
-      'Biosensing signal amplifier',
-      'Microcontroller processing unit',
-      'Onboard bandpass filtering',
-      'Assistive peripheral interface',
+      'Brain Computer Interface',
+      'Arduino',
+      'Helmet based sensing system',
+      'Computer based data processing',
     ],
   },
   'ai4traffic-control': {
     id: 'ai4traffic-control',
     title: 'AI4TrafficKontrol',
     badgeLabel: 'Health',
-    bannerImage: '/images/project_helchetics.png',
+    solidColor: '#EE7747',
     overview:
       'AI4TrafficKontrol is an artificial intelligence project focused on improving traffic management through machine learning and data driven prediction.',
     challenge:
-      'Urban congestion costs billions in productivity loss and causes severe emergency response delays. Fixed-cycle traffic lights cannot adapt to dynamic vehicular flow.',
+      'Traffic congestion affects productivity, mobility and economic activity, particularly in rapidly growing urban areas. Traditional traffic management systems often respond to congestion after it has already occurred.',
     solution:
-      'An intelligent traffic control prototype that dynamically optimizes signal timing sequences using real-time camera feeds and predictive machine learning models.',
-    howItWorks:
-      'Edge cameras capture live traffic density at intersections. The neural model analyzes queue lengths in real time and adjusts signal phases to minimize congestion and prioritize emergency vehicles.',
+      'AI4TrafficKontrol explores the use of machine learning to analyse traffic patterns, predict potential congestion and support proactive traffic management.',
     potentialImpact:
-      'Enhances urban mobility, reduces commuter travel delays, and lowers carbon emissions from idling vehicles.',
+      'The project demonstrates how artificial intelligence and data can be applied to improve mobility, reduce congestion and support smarter urban transportation systems.',
     keyTechnologies: [
-      'Edge compute computer vision nodes',
-      'Deep learning vehicle detection model',
-      'Adaptive signal controller relay',
-      'Real-time traffic telemetry',
-      'Emergency vehicle priority routing',
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Traffic data analysis',
+      'Predictive analytics',
     ],
   },
 }
-
-// Aliases for alternate route parameter names
-PROJECT_DETAILS_DATA['shedetectit'] = PROJECT_DETAILS_DATA['shedetectit-bra']
-PROJECT_DETAILS_DATA['ai4traffickontrol'] = PROJECT_DETAILS_DATA['ai4traffic-control']
 
 export const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -140,7 +133,7 @@ export const ProjectDetail: React.FC = () => {
 
         {/* 2. Health Pill Badge */}
         <div className="mb-3.5">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EAF3FF] text-[#2F80ED] text-xs font-semibold">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EAF4FF] border border-[#CCE3FF] text-[#2F80ED] text-xs font-semibold">
             <svg
               className="w-3.5 h-3.5 text-[#2F80ED]"
               viewBox="0 0 24 24"
@@ -161,20 +154,27 @@ export const ProjectDetail: React.FC = () => {
           {project.title}
         </h1>
 
-        {/* 4. Full Project Image */}
-        <div className="w-full rounded-[20px] sm:rounded-[28px] overflow-hidden bg-neutral-100 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.06)] border border-neutral-200/60 mb-12 sm:mb-16">
-          <img
-            src={project.bannerImage}
-            alt={project.title}
-            className="w-full h-auto object-cover select-none"
-          />
+        {/* 4. Full Project Image or Solid Color Banner */}
+        <div className="w-full rounded-[20px] sm:rounded-[28px] overflow-hidden shadow-[0_4px_24px_-6px_rgba(0,0,0,0.06)] border border-neutral-200/60 mb-12 sm:mb-16">
+          {project.bannerImage ? (
+            <img
+              src={project.bannerImage}
+              alt={project.title}
+              className="w-full h-auto object-cover select-none"
+            />
+          ) : (
+            <div
+              className="w-full aspect-[16/9] sm:aspect-[1220/600]"
+              style={{ backgroundColor: project.solidColor || '#EE7747' }}
+            />
+          )}
         </div>
 
         {/* 5. Content Sections matching Screenshot 2 */}
         <div className="space-y-8 sm:space-y-10 max-w-4xl">
           {/* Project Overview */}
           <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
+            <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
               Project Overview
             </h2>
             <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
@@ -184,7 +184,7 @@ export const ProjectDetail: React.FC = () => {
 
           {/* The Challenge */}
           <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
+            <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
               The Challenge
             </h2>
             <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
@@ -194,7 +194,7 @@ export const ProjectDetail: React.FC = () => {
 
           {/* Our Solution */}
           <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
+            <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
               Our Solution
             </h2>
             <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
@@ -203,18 +203,20 @@ export const ProjectDetail: React.FC = () => {
           </div>
 
           {/* How It Works */}
-          <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
-              How It Works
-            </h2>
-            <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
-              {project.howItWorks}
-            </p>
-          </div>
+          {project.howItWorks && (
+            <div>
+              <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
+                How It Works
+              </h2>
+              <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
+                {project.howItWorks}
+              </p>
+            </div>
+          )}
 
           {/* Potential Impact */}
           <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
+            <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-2 sm:mb-2.5">
               Potential Impact
             </h2>
             <p className="text-neutral-700 text-xs sm:text-[13.5px] leading-relaxed font-normal">
@@ -224,7 +226,7 @@ export const ProjectDetail: React.FC = () => {
 
           {/* Key Technologies */}
           <div>
-            <h2 className="text-[#EB5A28] font-bold text-sm sm:text-[15px] mb-3.5 sm:mb-4">
+            <h2 className="text-[#EE7747] font-bold text-sm sm:text-[15px] mb-3.5 sm:mb-4">
               Key Technologies
             </h2>
             <ul className="space-y-3">
@@ -233,7 +235,7 @@ export const ProjectDetail: React.FC = () => {
                   key={idx}
                   className="flex items-center gap-2.5 text-xs sm:text-[13.5px] text-neutral-800 font-normal"
                 >
-                  <span className="w-4 h-4 rounded-full bg-[#EB5A28] flex items-center justify-center shrink-0">
+                  <span className="w-4 h-4 rounded-full bg-[#EE7747] flex items-center justify-center shrink-0">
                     <svg
                       className="w-2.5 h-2.5 text-white"
                       viewBox="0 0 24 24"

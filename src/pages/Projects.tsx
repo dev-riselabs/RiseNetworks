@@ -27,15 +27,15 @@ const PROJECTS_DATA: ProjectCardItem[] = [
     link: '/projects/helchetics',
   },
   {
-    id: 'shedetectit-bra',
-    title: 'SHEDETECTIT BRA',
+    id: 'shedetectit',
+    title: 'SHEDETECTIT',
     category: 'health',
     categoryLabel: 'Health',
     description:
       'SheDetectIt is a wearable technology prototype designed to explore how sensors and data collection can support breast health monitoring and the early identification of potential irregularities.',
     image: '/images/project_shedetectit.png',
     badgeLabel: 'Health',
-    link: '/projects/shedetectit-bra',
+    link: '/projects/shedetectit',
   },
   {
     id: 'cerebral-bci',
@@ -55,7 +55,7 @@ const PROJECTS_DATA: ProjectCardItem[] = [
     categoryLabel: 'Artificial Intelligence',
     description:
       'AI4TrafficKontrol is an artificial intelligence project focused on improving traffic management through machine learning and data driven prediction.',
-    solidColor: '#EB6033',
+    solidColor: '#EE7747',
     badgeLabel: 'Health',
     link: '/projects/ai4traffic-control',
   },
@@ -208,7 +208,7 @@ export const Projects: React.FC = () => {
                     ) : (
                       <div
                         className="w-full h-full"
-                        style={{ backgroundColor: project.solidColor || '#EB6033' }}
+                        style={{ backgroundColor: project.solidColor || '#EE7747' }}
                       />
                     )}
                   </div>
@@ -230,7 +230,7 @@ export const Projects: React.FC = () => {
                     {/* Bottom Row */}
                     <div className="flex items-center justify-between pt-2">
                       {/* Left: Health pill badge with heart icon */}
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EAF3FF] text-[#2F80ED] text-xs font-semibold">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF4FF] border border-[#CCE3FF] text-[#2F80ED] text-xs font-semibold">
                         <svg
                           className="w-3.5 h-3.5 text-[#2F80ED]"
                           viewBox="0 0 24 24"

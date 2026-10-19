@@ -32,14 +32,12 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
-            <Route path="/why-rise" element={<WhyRise />} />
             <Route path="/why-rise-networks" element={<WhyRise />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/academy" element={<Academy />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/contact-us" element={<Contact />} />
             <Route path="/townhall" element={<AiForEducationTownhall />} />
             <Route path="/ai-for-industries" element={<AiForIndustriesTownhall />} />
             <Route path="/strategic-vision" element={<StrategicVision />} />
@@ -51,7 +49,6 @@ const App = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/project-detail" element={<ProjectDetail />} />
           </Routes>
         </Suspense>
       </Layout>
