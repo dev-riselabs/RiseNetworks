@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export interface InteractiveItem {
   title: string
   description?: string
+  bulletsHeader?: string
   bullets?: string[]
   image: string
 }
@@ -88,14 +89,20 @@ export const InteractiveFeatureList: React.FC<InteractiveFeatureListProps> = ({
                           </p>
                         )}
 
+                        {item.bulletsHeader && (
+                          <p className="text-xs sm:text-sm font-medium text-dark mt-3 mb-1">
+                            {item.bulletsHeader}
+                          </p>
+                        )}
+
                         {item.bullets && item.bullets.length > 0 && (
-                          <ul className="space-y-1.5 sm:space-y-2 mt-2">
+                          <ul className="space-y-1 sm:space-y-1.5 mt-1.5">
                             {item.bullets.map((bullet, bIdx) => (
                               <li
                                 key={bIdx}
-                                className="flex items-start gap-2 text-xs sm:text-sm lg:text-[15px] text-muted font-normal leading-relaxed"
+                                className="flex items-start gap-2 text-xs sm:text-sm lg:text-[14px] text-muted font-normal leading-relaxed"
                               >
-                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-dark mt-2 shrink-0" />
+                                <span className="inline-block w-1 h-1 rounded-full bg-dark mt-2 shrink-0" />
                                 <span>{bullet}</span>
                               </li>
                             ))}

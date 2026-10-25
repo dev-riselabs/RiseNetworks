@@ -8,7 +8,7 @@ export interface AccordionItem {
 export interface InteractiveAccordionProps {
   title: React.ReactNode
   subtitle?: React.ReactNode
-  badge?: string
+  badge?: React.ReactNode
   image: string
   imageAlt?: string
   items: AccordionItem[]
@@ -18,6 +18,7 @@ export interface InteractiveAccordionProps {
   defaultIndex?: number
   className?: string
   imageClassName?: string
+  children?: React.ReactNode
 }
 
 export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
@@ -33,6 +34,7 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
   defaultIndex = 0,
   className = '',
   imageClassName = '',
+  children,
 }) => {
   const [activeIndex, setActiveIndex] = useState(defaultIndex)
   const [timerKey, setTimerKey] = useState(0)
@@ -59,11 +61,15 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
     <section className={`w-full bg-white py-10 sm:py-16 lg:py-24 ${className}`}>
       <div className="max-w-[95vw] lg:max-w-[80vw] mx-auto px-6 sm:px-8 lg:px-12 w-full">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-14 lg:mb-20">
           {badge && (
-            <span className="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              {badge}
-            </span>
+            typeof badge === 'string' ? (
+              <div className="inline-flex items-center px-6 py-2 rounded-full border border-neutral-200 bg-white shadow-2xs text-[#EE7747] text-xs sm:text-sm font-bold tracking-wider uppercase mb-5">
+                {badge}
+              </div>
+            ) : (
+              badge
+            )
           )}
           <h2 className="font-bricolage text-2xl sm:text-5xl lg:text-[56px] font-medium text-dark tracking-tight leading-tight mb-2 sm:mb-4">
             {title}
@@ -163,6 +169,12 @@ export const InteractiveAccordion: React.FC<InteractiveAccordionProps> = ({
                 </div>
               )
             })}
+
+            {children && (
+              <div className="pt-2 sm:pt-3">
+                {children}
+              </div>
+            )}
           </div>
         </div>
       </div>

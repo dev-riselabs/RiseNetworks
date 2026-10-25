@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 export const Footer: React.FC = () => {
   const meetRiseLinks = [
     { label: 'About Us', href: '/about-us' },
+    { label: 'Awards & Recognition', href: '/awards' },
     { label: 'Why Rise Networks', href: '/why-rise-networks' },
     { label: 'FAQs', href: '/faq' },
-    { label: 'The Rise Networks Framework for Global AI Leadership', href: '#' },
+    { label: 'The Rise Networks Framework for Global AI Leadership', href: '/global-ai-leadership' },
     { label: 'Strategic Vision & Futuristic Outlook', href: '/strategic-vision' },
   ]
 

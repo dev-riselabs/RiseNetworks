@@ -22,6 +22,8 @@ const Events = lazy(() => import('./pages/Events'))
 const Projects = lazy(() => import('./pages/Projects'))
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Contact = lazy(() => import('./pages/Contact'))
+const Awards = lazy(() => import('./pages/Awards'))
+const Governance = lazy(() => import('./pages/Governance'))
 
 const App = () => {
   return (
@@ -38,6 +40,11 @@ const App = () => {
             <Route path="/faq" element={<Faq />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/awards" element={<Awards />} />
+            <Route path="/award" element={<Awards />} />
+            <Route path="/awards-and-recognition" element={<Awards />} />
+            <Route path="/award-recognition" element={<Awards />} />
+            <Route path="/governance" element={<Governance />} />
             <Route path="/townhall" element={<AiForEducationTownhall />} />
             <Route path="/ai-for-industries" element={<AiForIndustriesTownhall />} />
             <Route path="/strategic-vision" element={<StrategicVision />} />

@@ -26,6 +26,7 @@ export const NavBar: React.FC = () => {
 
   const meetRiseDropdown = [
     { label: 'About Us', href: '/about-us', description: 'Our history, mission, vision and leadership' },
+    { label: 'Awards & Recognition', href: '/awards', description: 'Global and continental honors celebrating our innovation and impact' },
     { label: 'Global AI Leadership', href: '/global-ai-leadership', description: 'Our framework for global AI leadership and sovereign impact' },
     { label: 'Our Research', href: '/research', description: 'Interdisciplinary research in AI ethics, governance and human development' },
     { label: 'Strategic Vision', href: '/strategic-vision', description: 'Strategic vision and futuristic outlook' },
