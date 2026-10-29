@@ -24,6 +24,11 @@ const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Awards = lazy(() => import('./pages/Awards'))
 const Governance = lazy(() => import('./pages/Governance'))
+const Photos = lazy(() => import('./pages/Photos'))
+const PhotoDetail = lazy(() => import('./pages/PhotoDetail'))
+const MediaReleases = lazy(() => import('./pages/MediaReleases'))
+const MediaReleaseDetail = lazy(() => import('./pages/MediaReleaseDetail'))
+const Videos = lazy(() => import('./pages/Videos'))
 
 const App = () => {
   return (
@@ -56,6 +61,18 @@ const App = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/photos" element={<Photos />} />
+            <Route path="/photos/:id" element={<PhotoDetail />} />
+            <Route path="/gallery" element={<Photos />} />
+            <Route path="/gallery/:id" element={<PhotoDetail />} />
+            <Route path="/media-releases" element={<MediaReleases />} />
+            <Route path="/media-releases/:id" element={<MediaReleaseDetail />} />
+            <Route path="/media-release" element={<MediaReleases />} />
+            <Route path="/media-release/:id" element={<MediaReleaseDetail />} />
+            <Route path="/press" element={<MediaReleases />} />
+            <Route path="/press/:id" element={<MediaReleaseDetail />} />
+            <Route path="/videos" element={<Videos />} />
+            <Route path="/stories" element={<Videos />} />
           </Routes>
         </Suspense>
       </Layout>

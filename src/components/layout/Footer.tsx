@@ -46,9 +46,9 @@ export const Footer: React.FC = () => {
   ]
 
   const newsroomLinks = [
-    { label: 'Photos', href: '#' },
-    { label: 'Videos', href: '#' },
-    { label: 'Media Release', href: '#' },
+    { label: 'Photos', href: '/photos' },
+    { label: 'Videos', href: '/videos' },
+    { label: 'Media Release', href: '/media-releases' },
   ]
 
   return (
